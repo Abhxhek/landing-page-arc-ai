@@ -32,7 +32,6 @@ export function AIVideoFeatures() {
               <div className="flex gap-5">
                 {leftImages.map((src, idx) => (
                   <div key={src} className="bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-[2.3rem] p-2.5 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] aspect-9/16 flex-1 relative overflow-hidden border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 group">
-                    <div className="absolute top-1 left-1/2 -translate-x-1/2 w-14 h-4 bg-black/80 rounded-b-2xl backdrop-blur-sm z-10" />
                     <Image
                       src={src}
                       alt={`AI Actor ${idx + 1}`}
@@ -63,7 +62,6 @@ export function AIVideoFeatures() {
               <div className="flex gap-5">
                 {rightImages.map((src, idx) => (
                   <div key={src} className="bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-[2.3rem] p-2.5 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] aspect-9/16 flex-1 relative overflow-hidden border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 group">
-                    <div className="absolute top-1 left-1/2 -translate-x-1/2 w-14 h-4 bg-black/80 rounded-b-2xl backdrop-blur-sm z-10" />
                     <Image
                       src={src}
                       alt={`AI Editing ${idx + 1}`}

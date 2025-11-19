@@ -18,7 +18,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative h-screen overflow-hidden bg-gradient-to-b from-[#fefcfb] via-[#fdf8f4] to-[#fcf5f0]">
+    <section className="relative h-screen overflow-hidden bg-gradient-to-b from-[#fefcfb] via-[#fdf8f4] to-[#fcf5f0] pt-20">
       {/* CSS Animations for infinite scrolling */}
       <style jsx>{`
         @keyframes scrollDown {
@@ -59,23 +59,23 @@ export function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
           
           {/* Left Column - Phone Mockups Scrolling Down */}
-          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left" style={{ height: '80vh', background: 'transparent' }}>
-            <div className="flex flex-col gap-4" style={{ animation: 'scrollDown 30s linear infinite', background: 'transparent' }}>
+          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left bg-transparent" style={{ height: '80vh', background: 'transparent' }}>
+            <div className="flex flex-col gap-4 bg-transparent " style={{ animation: 'scrollDown 30s linear infinite' }}>
               {/* Triple images for seamless infinite loop */}
               {[...heroImages.slice(0, 4), ...heroImages.slice(0, 4), ...heroImages.slice(0, 4)].map((imageUrl, index) => (
-                <div key={`left-${index}`} className="relative group w-48 flex-shrink-0">
-                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
+                <div key={`left-${index}`} className="relative w-48 flex-shrink-0">
+                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
                     
                     {/* Phone mockup content */}
-                    <div className="absolute inset-0 p-2">
+                    <div className="absolute inset-0 pt-8 px-2 pb-2">
                       <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
                         <Image
                           src={imageUrl}
                           alt={`Hero ad example ${(index % 4) + 1}`}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover"
                           sizes="200px"
                           unoptimized
                         />
@@ -138,19 +138,19 @@ export function Hero() {
             <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
               {/* Triple images for seamless infinite loop */}
               {[...heroImages.slice(4, 8), ...heroImages.slice(4, 8), ...heroImages.slice(4, 8)].map((imageUrl, index) => (
-                <div key={`right-${index}`} className="relative group w-48 flex-shrink-0">
-                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
+                <div key={`right-${index}`} className="relative w-48 flex-shrink-0">
+                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
                     
                     {/* Phone mockup content */}
-                    <div className="absolute inset-0 p-2">
+                    <div className="absolute inset-0 pt-8 px-2 pb-2">
                       <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
                         <Image
                           src={imageUrl}
                           alt={`Hero ad example ${(index % 4) + 5}`}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover"
                           sizes="200px"
                           unoptimized
                         />
@@ -169,13 +169,13 @@ export function Hero() {
           {heroImages.map((imageUrl, index) => (
             <div
               key={index}
-              className="relative group"
+              className="relative"
               style={{
                 animation: `float ${3 + (index % 3)}s ease-in-out infinite`,
                 animationDelay: `${index * 0.15}s`,
               }}
             >
-              <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
+              <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
                 {/* Phone frame with notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-10" />
                 
@@ -186,7 +186,7 @@ export function Hero() {
                       src={imageUrl}
                       alt={`Hero ad example ${index + 1}`}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover"
                       sizes="(max-width: 768px) 50vw, 25vw"
                       unoptimized
                     />
