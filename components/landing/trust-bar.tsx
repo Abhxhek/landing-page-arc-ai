@@ -36,7 +36,7 @@ export function TrustBar() {
           </p>
         </div>
 
-        <div className="bg-white/[0.03] border border-white/[0.08] rounded-[2rem] px-10 py-7 flex flex-wrap items-center justify-center gap-8 text-white text-sm mb-16 backdrop-blur-sm shadow-[0_20px_70px_-30px_rgba(0,0,0,0.5)]">
+        <div className="bg-white/3 border border-white/8 rounded-4xl px-10 py-7 flex flex-wrap items-center justify-center gap-8 text-white text-sm mb-16 backdrop-blur-sm shadow-[0_20px_70px_-30px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-3">
             <span className="text-lg font-semibold">Creators</span>
             <span className="px-4 py-1.5 rounded-full bg-white/10 text-xs font-medium backdrop-blur-sm border border-white/10">412 online</span>
@@ -57,7 +57,7 @@ export function TrustBar() {
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 mb-20">
           {companyLogos.map(({ name, icon: Icon, color }) => (
             <div key={name} className="flex flex-col items-center text-xs uppercase tracking-[0.4em] text-white/60 transition-all duration-300 hover:text-white/90 cursor-pointer group">
-              <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] group-hover:bg-white/[0.08] group-hover:border-white/20 transition-all duration-300 group-hover:scale-110">
+              <div className="w-16 h-16 rounded-full bg-white/4 border border-white/10 flex items-center justify-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] group-hover:bg-white/[0.08] group-hover:border-white/20 transition-all duration-300 group-hover:scale-110">
                 <Icon size={26} style={{ color }} aria-label={name} />
               </div>
               <span className="mt-3.5 text-[10px] font-medium">{name}</span>
