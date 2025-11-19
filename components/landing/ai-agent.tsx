@@ -45,11 +45,11 @@ export function AIAgent() {
           </div>
 
           {/* Illustration */}
-          <div className="relative">
-            <div className="relative rounded-[3rem] bg-[#050505] border border-white/5 p-10 shadow-[0_40px_120px_rgba(0,0,0,0.55)] overflow-hidden">
+          <div className="relative py-12">
+            <div className="relative rounded-[3rem] bg-[#050505] border border-white/5 p-10 shadow-[0_40px_120px_rgba(0,0,0,0.55)] overflow-visible">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12)_0%,_rgba(0,0,0,0)_70%)] pointer-events-none" />
 
-              <div className="relative mx-auto max-w-sm rounded-[2.5rem] bg-linear-to-br from-[#7827ff] via-[#ff4df0] to-[#21bfff] px-8 pt-12 pb-16 shadow-[0_35px_90px_rgba(120,50,255,0.5)]">
+              <div className="relative mx-auto max-w-sm rounded-[2.5rem] bg-gradient-to-br from-[#ffd4c2] via-[#ffc4e8] to-[#e9d4ff] px-8 pt-12 pb-16 shadow-[0_35px_90px_rgba(255,212,194,0.5)]">
                 <div className="flex justify-center">
                   <div className="relative h-36 w-36 rounded-[1.5rem] overflow-hidden bg-white shadow-[0_30px_80px_rgba(0,0,0,0.35)] border border-white/30">
                     <Image
@@ -75,18 +75,18 @@ export function AIAgent() {
                 </div>
               </div>
 
-              <div className="absolute -top-8 right-10 bg-[#101010] border border-white/10 rounded-[1.75rem] px-7 py-4 shadow-[0_25px_55px_rgba(0,0,0,0.65)]">
-                <p className="text-[0.55rem] uppercase tracking-[0.55em] text-white/70 mb-1">
+              <div className="absolute -top-8 right-8 bg-gradient-to-br from-[#1a1a1a]/95 to-[#0a0a0a]/95 backdrop-blur-xl border border-white/[0.08] rounded-[1.5rem] px-6 py-4 shadow-[0_25px_55px_rgba(0,0,0,0.8)] min-w-fit whitespace-nowrap">
+                <p className="text-[0.5rem] uppercase tracking-[0.5em] text-emerald-400/80 mb-1.5 font-medium">
                   AI Processing
                 </p>
-                <p className="text-4xl font-semibold text-emerald-300 leading-none">99.9%</p>
+                <p className="text-4xl font-bold text-emerald-400 leading-none">99.9%</p>
               </div>
 
-              <div className="absolute -bottom-10 left-10 bg-[#101010] border border-white/10 rounded-[1.75rem] px-7 py-4 shadow-[0_25px_55px_rgba(0,0,0,0.65)]">
-                <p className="text-[0.55rem] uppercase tracking-[0.55em] text-white/70 mb-1">
+              <div className="absolute -bottom-10 left-8 bg-gradient-to-br from-[#1a1a1a]/95 to-[#0a0a0a]/95 backdrop-blur-xl border border-white/[0.08] rounded-[1.5rem] px-6 py-4 shadow-[0_25px_55px_rgba(0,0,0,0.8)] min-w-fit whitespace-nowrap">
+                <p className="text-[0.5rem] uppercase tracking-[0.5em] text-cyan-400/80 mb-1.5 font-medium">
                   Active Agents
                 </p>
-                <p className="text-4xl font-semibold text-sky-300 leading-none">15K+</p>
+                <p className="text-4xl font-bold text-cyan-400 leading-none">15K+</p>
               </div>
             </div>
           </div>

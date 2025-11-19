@@ -20,58 +20,64 @@ const companyLogos = [
 
 export function TrustBar() {
   return (
-    <section className="relative bg-[#050505] py-24 md:py-32 overflow-hidden">
-      <div className="absolute -top-24 right-12 h-56 w-56 bg-[#6b4dff]/30 blur-[130px]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    <section className="relative bg-[#0a0a0a] py-28 md:py-36 overflow-hidden">
+      <div className="absolute -top-32 right-20 h-72 w-72 bg-[#6b4dff]/25 blur-[150px] animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="absolute top-1/2 left-10 h-64 w-64 bg-[#ff4df0]/15 blur-[140px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-14">
-          <p className="text-sm uppercase tracking-[0.3em] text-white/60 mb-4">Zyka AI</p>
-          <h2 className="text-white text-3xl md:text-4xl font-semibold mb-4 tracking-tight">
-            Used by millions of <span className="italic">the best marketers</span>
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+        <div className="text-center mb-16">
+          <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-5">Zyka AI</p>
+          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight leading-tight">
+            Used by millions of <span className="italic font-serif font-normal">the best marketers</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Powering high-performing creative for agencies, DTC brands, B2B SaaS & enterprise teams worldwide.
           </p>
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-3xl px-8 py-6 flex flex-wrap items-center justify-center gap-6 text-white text-sm mb-12">
-          <div className="flex items-center gap-2">
+        <div className="bg-white/[0.03] border border-white/[0.08] rounded-[2rem] px-10 py-7 flex flex-wrap items-center justify-center gap-8 text-white text-sm mb-16 backdrop-blur-sm shadow-[0_20px_70px_-30px_rgba(0,0,0,0.5)]">
+          <div className="flex items-center gap-3">
             <span className="text-lg font-semibold">Creators</span>
-            <span className="px-3 py-1 rounded-full bg-white/10 text-xs">412 online</span>
+            <span className="px-4 py-1.5 rounded-full bg-white/10 text-xs font-medium backdrop-blur-sm border border-white/10">412 online</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="hidden md:block w-px h-8 bg-white/10" />
+          <div className="flex items-center gap-3">
             <span className="text-lg font-semibold">AI Actors</span>
-            <span className="px-3 py-1 rounded-full bg-white/10 text-xs">1,024 available</span>
+            <span className="px-4 py-1.5 rounded-full bg-white/10 text-xs font-medium backdrop-blur-sm border border-white/10">1,024 available</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="hidden md:block w-px h-8 bg-white/10" />
+          <div className="flex items-center gap-3">
             <span className="text-lg font-semibold">AI Studios</span>
-            <span className="px-3 py-1 rounded-full bg-white/10 text-xs">98 global</span>
+            <span className="px-4 py-1.5 rounded-full bg-white/10 text-xs font-medium backdrop-blur-sm border border-white/10">98 global</span>
           </div>
         </div>
 
         {/* Company Logos */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-16">
+        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 mb-20">
           {companyLogos.map(({ name, icon: Icon, color }) => (
-            <div key={name} className="flex flex-col items-center text-xs uppercase tracking-[0.4em] text-white/60">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-lg">
-                <Icon size={24} style={{ color }} aria-label={name} />
+            <div key={name} className="flex flex-col items-center text-xs uppercase tracking-[0.4em] text-white/60 transition-all duration-300 hover:text-white/90 cursor-pointer group">
+              <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] group-hover:bg-white/[0.08] group-hover:border-white/20 transition-all duration-300 group-hover:scale-110">
+                <Icon size={26} style={{ color }} aria-label={name} />
               </div>
-              <span className="mt-3 text-[11px]">{name}</span>
+              <span className="mt-3.5 text-[10px] font-medium">{name}</span>
             </div>
           ))}
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {[
             { value: "10M+", label: "Ads created" },
             { value: "500K+", label: "Marketers onboarded" },
             { value: "98%", label: "Success rate" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-white text-4xl md:text-5xl font-semibold mb-1 tracking-tight">{stat.value}</div>
-              <div className="text-gray-400 text-sm uppercase tracking-[0.2em]">{stat.label}</div>
+          ].map((stat, index) => (
+            <div 
+              key={stat.label} 
+              className="text-center p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 group"
+            >
+              <div className="text-white text-5xl md:text-6xl font-bold mb-2 tracking-tight group-hover:scale-105 transition-transform duration-300">{stat.value}</div>
+              <div className="text-gray-400 text-xs uppercase tracking-[0.25em] font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -37,39 +37,47 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black tracking-tight">
-            Recommended by <span className="italic">thought leaders</span>
+    <section className="py-28 md:py-36 bg-gradient-to-b from-white via-[#fefcfb] to-white">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-black tracking-tight leading-tight">
+            Recommended by <span className="italic font-serif font-normal">thought leaders</span>
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
             Hear what industry experts and top marketers say about Zyka AI.
           </p>
         </div>
 
-        {/* Testimonial Cards */}
-        <div className="flex flex-col md:flex-row md:items-stretch gap-4 max-w-7xl mx-auto">
+        {/* Testimonial Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="flex flex-1 items-center gap-4 rounded-2xl border border-gray-200 bg-white/90 px-5 py-4 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.35)]"
+              className="group relative rounded-[2rem] border border-gray-200 bg-white px-8 py-10 shadow-[0_20px_70px_-30px_rgba(15,23,42,0.3)] hover:shadow-[0_25px_90px_-25px_rgba(15,23,42,0.4)] transition-all duration-300 hover:scale-[1.02]"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden relative ring-2 ring-black/5">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className="object-cover"
-                  sizes="48px"
-                  unoptimized
-                />
+              <div className="flex items-start gap-5 mb-6">
+                <div className="w-16 h-16 rounded-full overflow-hidden relative ring-2 ring-black/5 flex-shrink-0">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-[10px] uppercase tracking-[0.35em] text-gray-400 mb-2 font-medium">Thought leader</p>
+                  <div className="text-base font-bold text-gray-900">{testimonial.name}</div>
+                  <p className="text-sm text-gray-500 mt-1">{testimonial.role}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{testimonial.company}</p>
+                </div>
               </div>
-              <div className="flex flex-col text-left">
-                <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-1">Thought leader</p>
-                <div className="text-sm font-semibold text-gray-900">{testimonial.name}</div>
-                <p className="text-xs text-gray-500">{testimonial.role} · {testimonial.company}</p>
-              </div>
+              <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+                "{testimonial.quote}"
+              </blockquote>
+              {/* Quote decoration */}
+              <div className="absolute top-6 right-8 text-7xl text-gray-100 font-serif leading-none select-none">"</div>
             </div>
           ))}
         </div>

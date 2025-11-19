@@ -18,60 +18,154 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-36 md:pt-44 pb-32 bg-[radial-gradient(circle_at_top,#fff9f4,#fdf3ec_35%,#f6efe8_70%,#f5f5f3)]">
-      {/* Blurred background orbs */}
-      <div className="absolute -top-20 left-1/3 h-64 w-64 bg-[#f9d1c2] opacity-40 blur-[120px]" />
-      <div className="absolute top-20 -left-10 h-72 w-72 bg-[#fde6c5] opacity-50 blur-[140px]" />
-      <div className="absolute bottom-6 right-10 h-64 w-64 bg-[#f3d6ff] opacity-40 blur-[100px]" />
+    <section className="relative h-screen overflow-hidden bg-gradient-to-b from-[#fefcfb] via-[#fdf8f4] to-[#fcf5f0]">
+      {/* CSS Animations for infinite scrolling */}
+      <style jsx>{`
+        @keyframes scrollDown {
+          from {
+            transform: translateY(0%);
+          }
+          to {
+            transform: translateY(-50%);
+          }
+        }
+        @keyframes scrollUp {
+          from {
+            transform: translateY(-50%);
+          }
+          to {
+            transform: translateY(0%);
+          }
+        }
+        .scroll-container-left,
+        .scroll-container-right {
+          -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+          background: transparent;
+        }
+        .scroll-container-left > div,
+        .scroll-container-right > div {
+          background: transparent;
+        }
+      `}</style>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center mb-20">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/80 border border-black/5 rounded-full px-4 py-2 text-xs md:text-sm font-semibold text-gray-600 mb-6 shadow-sm">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#6b4dff]" />
-            Trusted by 500K+ growth teams worldwide
-          </div>
+      {/* Enhanced blurred background orbs */}
+      <div className="absolute -top-32 left-1/4 h-80 w-80 bg-[#ffd4c2] opacity-30 blur-[140px] animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute top-32 -left-20 h-96 w-96 bg-[#ffe8d1] opacity-35 blur-[160px]" />
+      <div className="absolute bottom-20 right-16 h-80 w-80 bg-[#f0d4ff] opacity-30 blur-[130px] animate-pulse" style={{ animationDuration: '5s' }} />
 
-          {/* Main Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-[4.5rem] font-semibold mb-6 tracking-[-0.03em] text-black leading-[1.05]">
-            Create winning ads{" "}
-            <span className="italic">with AI</span>
-          </h1>
-
-          {/* Sub-headline */}
-          <p className="text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Use our library of 1,000+ captivating AI Actors, or create your own AI Avatar from a single photo.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* CTA Button */}
-            <Button 
-              size="lg" 
-              className="bg-black hover:bg-gray-900 text-white px-8 py-6 text-base font-semibold rounded-full shadow-lg transition-all"
-            >
-              Create Your AI Ad <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <button className="text-base font-semibold text-black/70 hover:text-black underline decoration-black/20">
-              Watch 1-min video
-            </button>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((item) => (
-                  <div key={item} className="h-8 w-8 rounded-full bg-black/5 border border-white" />
-                ))}
-              </div>
-              <span>4.9/5 rating from 10M+ ads</span>
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10 h-full flex items-center">
+        {/* Three Column Layout: Images - Text - Images */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
+          
+          {/* Left Column - Phone Mockups Scrolling Down */}
+          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left" style={{ height: '80vh', background: 'transparent' }}>
+            <div className="flex flex-col gap-4" style={{ animation: 'scrollDown 30s linear infinite', background: 'transparent' }}>
+              {/* Triple images for seamless infinite loop */}
+              {[...heroImages.slice(0, 4), ...heroImages.slice(0, 4), ...heroImages.slice(0, 4)].map((imageUrl, index) => (
+                <div key={`left-${index}`} className="relative group w-48 flex-shrink-0">
+                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
+                    {/* Phone frame with notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
+                    
+                    {/* Phone mockup content */}
+                    <div className="absolute inset-0 p-2">
+                      <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
+                        <Image
+                          src={imageUrl}
+                          alt={`Hero ad example ${(index % 4) + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="200px"
+                          unoptimized
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="h-2 w-2 rounded-full bg-[#6b4dff] hidden md:block" />
-            <div>Works with TikTok · Meta · YouTube · Shopify</div>
           </div>
+
+          {/* Center Column - Text Content */}
+          <div className="flex-1 max-w-2xl text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/90 border border-black/8 rounded-full px-5 py-2.5 text-xs md:text-sm font-semibold text-gray-700 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] backdrop-blur-sm hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#6b4dff] animate-pulse" />
+              Trusted by 500K+ growth teams worldwide
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-[-0.03em] text-black leading-[1.1] animate-fade-in-up">
+              Create winning ads{" "}
+              <span className="italic font-serif font-normal">with AI</span>
+            </h1>
+
+            {/* Sub-headline */}
+            <p className="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
+              Use our library of 1,000+ captivating AI Actors, or create your own AI Avatar from a single photo.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* CTA Button */}
+              <Button 
+                size="lg" 
+                className="bg-black hover:bg-gray-800 text-white px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+              >
+                Create Your AI Ad <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <button className="text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40">
+                Watch 1-min video
+              </button>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((item) => (
+                    <div key={item} className="h-8 w-8 rounded-full bg-black/5 border border-white" />
+                  ))}
+                </div>
+                <span>4.9/5 rating from 10M+ ads</span>
+              </div>
+              <div className="h-2 w-2 rounded-full bg-[#6b4dff] hidden md:block" />
+              <div>Works with TikTok · Meta · YouTube · Shopify</div>
+            </div>
+          </div>
+
+          {/* Right Column - Phone Mockups Scrolling Up */}
+          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-right" style={{ height: '80vh', background: 'transparent' }}>
+            <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
+              {/* Triple images for seamless infinite loop */}
+              {[...heroImages.slice(4, 8), ...heroImages.slice(4, 8), ...heroImages.slice(4, 8)].map((imageUrl, index) => (
+                <div key={`right-${index}`} className="relative group w-48 flex-shrink-0">
+                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
+                    {/* Phone frame with notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
+                    
+                    {/* Phone mockup content */}
+                    <div className="absolute inset-0 p-2">
+                      <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
+                        <Image
+                          src={imageUrl}
+                          alt={`Hero ad example ${(index % 4) + 5}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="200px"
+                          unoptimized
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
-        {/* Phone Mockups Grid - Floating Pattern */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto px-4">
+        {/* Mobile View - Show images at bottom for smaller screens */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto px-4 mt-12 lg:hidden">
           {heroImages.map((imageUrl, index) => (
             <div
               key={index}
@@ -81,19 +175,18 @@ export function Hero() {
                 animationDelay: `${index * 0.15}s`,
               }}
             >
-              <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden border border-gray-100 aspect-9/16 relative">
+              <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden aspect-9/16 relative transition-all duration-300 group-hover:scale-105">
                 {/* Phone frame with notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-white rounded-b-2xl z-10 border-x border-t border-gray-100" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-10" />
                 
                 {/* Phone mockup content */}
-                <div className="absolute inset-0 pt-2 pb-1 px-1.5">
-                  <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
-                    {/* Real image from Pexels */}
+                <div className="absolute inset-0 p-2">
+                  <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
                     <Image
                       src={imageUrl}
                       alt={`Hero ad example ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 50vw, 25vw"
                       unoptimized
                     />

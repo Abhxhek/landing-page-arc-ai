@@ -37,26 +37,26 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-white pt-20 pb-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-to-b from-white to-[#fefcfb] pt-24 pb-12">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-16 mb-20">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <span className="text-2xl font-bold text-black">zyka.ai</span>
+            <div className="mb-8">
+              <span className="text-3xl font-bold text-black">zyka.ai</span>
             </div>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 text-base mb-8 leading-relaxed max-w-sm">
               Create winning ads with AI. The most realistic and personalized UGC ads
               for your marketing campaigns.
             </p>
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-gray-700"
+                  className="w-11 h-11 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center transition-all duration-300 text-gray-700 hover:scale-110 shadow-sm hover:shadow-lg"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -68,13 +68,13 @@ export function Footer() {
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-bold text-lg mb-4">{category}</h3>
-              <ul className="space-y-3">
+              <h3 className="font-bold text-lg mb-6 text-black">{category}</h3>
+              <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-600 hover:text-black transition-colors text-sm"
+                      className="text-gray-600 hover:text-black transition-colors text-base font-medium"
                     >
                       {link.name}
                     </a>
@@ -86,16 +86,21 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-12">
-          {/* <div className="text-center mb-8">
-            <span className="text-[8rem] md:text-[10rem] font-bold text-gray-100 select-none">
-              zyka.ai
-            </span>
-          </div> */}
-          
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-600 text-sm">
-              Copyright 2024 Zyka. All rights reserved.
+        <div className="border-t border-gray-200 pt-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-gray-600 text-sm font-medium">
+              © 2024 Zyka. All rights reserved.
+            </div>
+            <div className="flex gap-8 text-sm">
+              <a href="#privacy" className="text-gray-600 hover:text-black transition-colors font-medium">
+                Privacy Policy
+              </a>
+              <a href="#terms" className="text-gray-600 hover:text-black transition-colors font-medium">
+                Terms of Service
+              </a>
+              <a href="#cookies" className="text-gray-600 hover:text-black transition-colors font-medium">
+                Cookies
+              </a>
             </div>
           </div>
         </div>

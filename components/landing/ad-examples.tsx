@@ -103,67 +103,73 @@ export function AdExamples() {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    let intervalId: NodeJS.Timeout | null = null;
-    const scrollSpeed = 0.5; // pixels per frame
-    const scrollDelay = 50; // milliseconds between scrolls
+    let animationFrameId: number | null = null;
+    let isPaused = false;
+    const scrollSpeed = 1; // pixels per frame
 
     const scroll = () => {
-      if (scrollContainer) {
-        scrollAmount += scrollSpeed;
-        const maxScroll = scrollContainer.scrollWidth / 2; // Half because we duplicated items
+      if (scrollContainer && !isPaused) {
+        scrollContainer.scrollLeft += scrollSpeed;
         
-        if (scrollAmount >= maxScroll) {
-          scrollAmount = 0; // Reset to start for seamless loop
+        // Reset scroll when we've scrolled through half (duplicated items)
+        const maxScroll = scrollContainer.scrollWidth / 2;
+        if (scrollContainer.scrollLeft >= maxScroll) {
+          scrollContainer.scrollLeft = 0;
         }
-        
-        scrollContainer.scrollLeft = scrollAmount;
       }
+      
+      animationFrameId = requestAnimationFrame(scroll);
     };
 
-    const startScroll = () => {
-      intervalId = setInterval(scroll, scrollDelay);
+    const handleMouseEnter = () => {
+      isPaused = true;
     };
 
-    const stopScroll = () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-      }
+    const handleMouseLeave = () => {
+      isPaused = false;
     };
 
-    startScroll();
+    // Start animation
+    animationFrameId = requestAnimationFrame(scroll);
 
     // Pause on hover
-    scrollContainer.addEventListener("mouseenter", stopScroll);
-    scrollContainer.addEventListener("mouseleave", startScroll);
+    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
+    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      stopScroll();
-      scrollContainer.removeEventListener("mouseenter", stopScroll);
-      scrollContainer.removeEventListener("mouseleave", startScroll);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
+      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-[#050505] text-white">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 md:mb-16">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <section className="py-28 md:py-36 bg-[#0a0a0a] text-white relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute -top-40 left-1/3 h-96 w-96 bg-[#6b4dff]/15 blur-[150px]" />
+      
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+        <div className="mb-16 md:mb-20">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60 mb-3">Zyka Coursiv</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">Coursiv</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-4">Zyka Coursiv</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Coursiv</h2>
             </div>
             <div className="flex flex-wrap gap-3 text-xs">
               {["All", "UGC", "Reviews", "Actors", "Statement"].map((tag) => (
-                <span
+                <button
                   key={tag}
-                  className={`px-4 py-2 rounded-full border ${
-                    tag === "All" ? "bg-white text-black border-white" : "border-white/20 text-white/70"
+                  className={`px-5 py-2.5 rounded-full border font-medium transition-all duration-300 ${
+                    tag === "All" 
+                      ? "bg-white text-black border-white shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-105" 
+                      : "border-white/20 text-white/70 hover:border-white/40 hover:text-white/90 hover:bg-white/5"
                   }`}
                 >
                   {tag}
-                </span>
+                </button>
               ))}
             </div>
           </div>
@@ -173,18 +179,18 @@ export function AdExamples() {
         <div 
           ref={scrollRef}
           className="overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide"
-          style={{ scrollBehavior: "smooth" }}
+          style={{ scrollBehavior: "auto" }}
         >
           <div className="flex gap-4 md:gap-6 min-w-max">
             {/* Duplicate items for seamless loop */}
             {[...examples, ...examples].map((example, index) => (
               <div key={`${example.id}-${index}`} className="flex-shrink-0 w-56 md:w-64 group cursor-pointer">
-                <div className="relative rounded-[2.3rem] bg-gradient-to-b from-[#111111] to-[#050505] p-2.5 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.8)] border border-white/5 aspect-9/16">
+                <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#161616] to-[#0a0a0a] p-3 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] border border-white/[0.06] hover:border-white/[0.12] aspect-9/16 transition-all duration-300">
                   {/* Phone notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-b-2xl z-20" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-black/90 rounded-b-2xl z-20 backdrop-blur-sm" />
                   
                   {/* Phone frame */}
-                  <div className="w-full h-full rounded-[1.6rem] overflow-hidden relative bg-black">
+                  <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative bg-black">
                     {/* Real image from Pexels */}
                     <Image
                       src={example.image}
@@ -225,8 +231,8 @@ export function AdExamples() {
                     </div>
 
                     {/* Play button - Red YouTube style */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 z-20">
-                      <div className="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-2xl">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/30 backdrop-blur-sm z-20">
+                      <div className="w-14 h-14 rounded-full bg-[#FF0000] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
                         <div className="w-0 h-0 border-l-10 border-l-white border-y-7 border-y-transparent ml-0.5" />
                       </div>
                     </div>

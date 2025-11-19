@@ -27,9 +27,9 @@ export default function Home() {
       <Features />
       <AIVideoFeatures />
       <MoreAIFeatures />
-      <AIAgent />
+      {/* <AIAgent /> */}
       <ViewsGenerated />
-      <CTASection />
+      {/* <CTASection /> */}
       <FounderSupport />
       <Footer />
     </main>
