@@ -1,39 +1,39 @@
+import Link from "next/link";
+import { Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
+
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   const footerLinks = {
     Product: [
-      { name: "Features", href: "#features" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "AI Avatars", href: "#avatars" },
-      { name: "Templates", href: "#templates" },
-      { name: "API", href: "#api" },
+      { name: "Features", href: "/features" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "AI Avatars", href: "/ai-avatars" },
+      { name: "Templates", href: "/templates" },
     ],
     Company: [
-      { name: "About Us", href: "#about" },
-      { name: "Careers", href: "#careers" },
-      { name: "Blog", href: "#blog" },
-      { name: "Press Kit", href: "#press" },
-      { name: "Contact", href: "#contact" },
+      { name: "About Us", href: "/about" },
+      { name: "Blog", href: "/blog" },
+      { name: "Contact", href: "/contact" },
     ],
     Resources: [
-      { name: "Help Center", href: "#help" },
-      { name: "Documentation", href: "#docs" },
-      { name: "Community", href: "#community" },
-      { name: "Tutorials", href: "#tutorials" },
-      { name: "Webinars", href: "#webinars" },
+      { name: "Help Center", href: "/help" },
+      { name: "Tutorials", href: "/tutorials" },
+      { name: "Webinars", href: "/webinars" },
     ],
     Legal: [
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "Cookie Policy", href: "#cookies" },
-      { name: "GDPR", href: "#gdpr" },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookies" },
+      { name: "GDPR", href: "/gdpr" },
     ],
   };
 
   const socialLinks = [
-    { name: "Twitter", icon: "𝕏" },
-    { name: "LinkedIn", icon: "in" },
-    { name: "Instagram", icon: "📷" },
-    { name: "YouTube", icon: "▶" },
+    { name: "Twitter", icon: Twitter },
+    { name: "LinkedIn", icon: Linkedin },
+    { name: "Instagram", icon: Instagram },
+    { name: "YouTube", icon: Youtube },
   ];
 
   return (
@@ -52,16 +52,19 @@ export function Footer() {
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href="#"
-                  className="w-11 h-11 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center transition-all duration-300 text-gray-700 hover:scale-110 shadow-sm hover:shadow-lg"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href="#"
+                    className="w-11 h-11 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center transition-all duration-300 text-gray-700 hover:scale-110 shadow-sm hover:shadow-lg"
+                    aria-label={social.name}
+                  >
+                    <IconComponent size={20} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -72,12 +75,12 @@ export function Footer() {
               <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-gray-600 hover:text-black transition-colors text-base font-medium"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -89,18 +92,18 @@ export function Footer() {
         <div className="border-t border-gray-200 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-gray-600 text-sm font-medium">
-              © 2024 Zyka. All rights reserved.
+              © {currentYear} Zyka. All rights reserved.
             </div>
             <div className="flex gap-8 text-sm">
-              <a href="#privacy" className="text-gray-600 hover:text-black transition-colors font-medium">
+              <Link href="/privacy" className="text-gray-600 hover:text-black transition-colors font-medium">
                 Privacy Policy
-              </a>
-              <a href="#terms" className="text-gray-600 hover:text-black transition-colors font-medium">
+              </Link>
+              <Link href="/terms" className="text-gray-600 hover:text-black transition-colors font-medium">
                 Terms of Service
-              </a>
-              <a href="#cookies" className="text-gray-600 hover:text-black transition-colors font-medium">
+              </Link>
+              <Link href="/cookies" className="text-gray-600 hover:text-black transition-colors font-medium">
                 Cookies
-              </a>
+              </Link>
             </div>
           </div>
         </div>
