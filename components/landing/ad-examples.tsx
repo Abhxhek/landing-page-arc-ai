@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { ArrowUp01, ArrowUp01Icon, ArrowUp10, ArrowUpAz, ArrowUpCircle, ArrowUpLeft, Eye } from "lucide-react";
 
 export function AdExamples() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export function AdExamples() {
       brand: "Glam",
       tag: "Sponsored",
       status: "ACTIVE",
-      text: "📸 Transform your photo into a professional shoot with Glam AI.",
+      text: "Transform your photo into a professional shoot with Glam AI.",
       views: "18.5K",
       revenue: "$27K",
       delta: "+95%",
@@ -184,10 +185,10 @@ export function AdExamples() {
           <div className="flex gap-4 md:gap-6 min-w-max">
             {/* Duplicate items for seamless loop */}
             {[...examples, ...examples].map((example, index) => (
-              <div key={`${example.id}-${index}`} className="flex-shrink-0 w-56 md:w-64 group cursor-pointer">
-                <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#161616] to-[#0a0a0a] p-3 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] border border-white/[0.06] hover:border-white/[0.12] aspect-9/16 transition-all duration-300">
+              <div key={`${example.id}-${index}`} className="shrink-0 w-56 md:w-64 group cursor-pointer">
+                <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#161616] to-[#0a0a0a] p-2 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] border border-white/[0.06] hover:border-white/[0.12] aspect-9/16 transition-all duration-300">
                   {/* Phone notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-black/90 rounded-b-2xl z-20 backdrop-blur-sm" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-gradient-to-b from-[#161616] to-[#0a0a0a] rounded-b-xl z-30 backdrop-blur-sm" />
                   
                   {/* Phone frame */}
                   <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative bg-black">
@@ -219,11 +220,11 @@ export function AdExamples() {
                         </p>
                         <div className="flex items-center justify-between text-white/90 text-xs font-semibold">
                           <div>
-                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px]">Views</p>
+                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><Eye size={12}/>Views</p>
                             <p>{example.views}</p>
                           </div>
                           <div className="text-right">
-                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px]">Revenue</p>
+                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><ArrowUpLeft color="green" size={13}/>Revenue</p>
                             <p>{example.revenue} <span className="text-green-400">{example.delta}</span></p>
                           </div>
                         </div>
@@ -232,8 +233,8 @@ export function AdExamples() {
 
                     {/* Play button - Red YouTube style */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/30 backdrop-blur-sm z-20">
-                      <div className="w-14 h-14 rounded-full bg-[#FF0000] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
-                        <div className="w-0 h-0 border-l-10 border-l-white border-y-7 border-y-transparent ml-0.5" />
+                      <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 border-l-10 border-l-white border-y-7 border-y-transparent ml-0.5" />
                       </div>
                     </div>
                   </div>

@@ -24,7 +24,7 @@ export function MoreAIFeatures() {
                   "https://images.pexels.com/photos/5591792/pexels-photo-5591792.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
                   "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
                 ].map((src, idx) => (
-                  <div key={src} className="flex-1 aspect-square rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border border-white/[0.08] shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] hover:border-white/[0.15] relative transition-all duration-300 group">
+                  <div key={src} className="h-100 flex-1 aspect-square rounded-4xl overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border border-white/[0.08] shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] hover:border-white/[0.15] relative transition-all duration-300 group">
                     <Image
                       src={src}
                       alt={`Emotion preset ${idx + 1}`}
@@ -52,7 +52,7 @@ export function MoreAIFeatures() {
               </p>
               
               {/* Image with Globe Icon */}
-              <div className="relative rounded-[2rem] overflow-hidden border border-white/[0.08] shadow-[0_40px_140px_-50px_rgba(0,0,0,0.95)] hover:shadow-[0_45px_160px_-45px_rgba(0,0,0,0.98)] aspect-4/3 group transition-all duration-300">
+              <div className="relative rounded-4xl overflow-hidden border border-white/8 shadow-[0_40px_140px_-50px_rgba(0,0,0,0.95)] hover:shadow-[0_45px_160px_-45px_rgba(0,0,0,0.98)] aspect-4/3 group transition-all duration-300">
                 <Image
                   src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
                   alt="Localization"

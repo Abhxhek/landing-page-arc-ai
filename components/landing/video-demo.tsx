@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function VideoDemo() {
   return (
@@ -12,12 +14,12 @@ export function VideoDemo() {
                 <span className="text-lg">✨</span>
                 <span className="font-semibold">See it in action</span>
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
                 Create stunning ads in{" "}
                 <span className="italic font-serif font-normal">minutes</span>
               </h2>
-              
+
               <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed">
                 Watch how easy it is to generate professional-quality advertisements
                 with our AI-powered platform. No design skills needed.
@@ -49,9 +51,13 @@ export function VideoDemo() {
                 ))}
               </ul>
 
-              <button className="bg-black text-white px-10 py-5 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] hover:scale-105">
-                Try it yourself →
-              </button>
+              <Button
+              
+                size="lg"
+                className="w-2xs group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+              >
+                Try it yourself <ArrowRight className="group-hover:translate-x-2 duration-300" />
+              </Button>
             </div>
 
             {/* Video Side */}
@@ -72,8 +78,8 @@ export function VideoDemo() {
 
                 {/* Play button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-[0_20px_70px_rgba(0,0,0,0.4)] hover:scale-110 hover:bg-white transition-all duration-300 group">
-                    <div className="w-0 h-0 border-l-[18px] border-l-black border-y-[12px] border-y-transparent ml-1.5 group-hover:border-l-gray-800" />
+                  <button className=" cursor-pointer w-24 h-24 rounded-full bg-white/30 flex items-center justify-center shadow-[0_20px_70px_rgba(0,0,0,0.4)] hover:scale-110 transition-all duration-300 group">
+                    <div className="w-0 h-0 border-l-18 border-l-white border-y-12 border-y-transparent ml-1.5 " />
                   </button>
                 </div>
 
@@ -88,7 +94,7 @@ export function VideoDemo() {
               </div>
 
               {/* Floating stats */}
-              <div className="absolute -bottom-8 -left-8 bg-white rounded-[1.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.35)] p-7 border border-gray-100">
+              <div className="absolute -bottom-8 -left-8 bg-white rounded-3xl shadow-[0_25px_80px_-20px_rgba(0,0,0,0.35)] p-7 border border-gray-100">
                 <div className="text-4xl font-bold text-black tracking-tight">2.5M+</div>
                 <div className="text-sm text-gray-600 font-medium mt-1">Videos Created</div>
               </div>
