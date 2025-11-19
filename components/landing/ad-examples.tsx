@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowUp01, ArrowUp01Icon, ArrowUp10, ArrowUpAz, ArrowUpCircle, ArrowUpLeft, Eye } from "lucide-react";
 
 export function AdExamples() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  // const scrollRef = useRef<HTMLDivElement>(null);
 
   // Pexels royalty-free images for ad mockups
   const examples = [
@@ -100,51 +100,51 @@ export function AdExamples() {
   ];
 
   // Auto-scroll functionality with seamless loop
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  // useEffect(() => {
+  //   const scrollContainer = scrollRef.current;
+  //   if (!scrollContainer) return;
 
-    let animationFrameId: number | null = null;
-    let isPaused = false;
-    const scrollSpeed = 1; // pixels per frame
+  //   let animationFrameId: number | null = null;
+  //   let isPaused = false;
+  //   const scrollSpeed = 1; // pixels per frame
 
-    const scroll = () => {
-      if (scrollContainer && !isPaused) {
-        scrollContainer.scrollLeft += scrollSpeed;
+  //   const scroll = () => {
+  //     if (scrollContainer && !isPaused) {
+  //       scrollContainer.scrollLeft += scrollSpeed;
         
-        // Reset scroll when we've scrolled through half (duplicated items)
-        const maxScroll = scrollContainer.scrollWidth / 2;
-        if (scrollContainer.scrollLeft >= maxScroll) {
-          scrollContainer.scrollLeft = 0;
-        }
-      }
+  //       // Reset scroll when we've scrolled through half (duplicated items)
+  //       const maxScroll = scrollContainer.scrollWidth / 2;
+  //       if (scrollContainer.scrollLeft >= maxScroll) {
+  //         scrollContainer.scrollLeft = 0;
+  //       }
+  //     }
       
-      animationFrameId = requestAnimationFrame(scroll);
-    };
+  //     animationFrameId = requestAnimationFrame(scroll);
+  //   };
 
-    const handleMouseEnter = () => {
-      isPaused = true;
-    };
+  //   const handleMouseEnter = () => {
+  //     isPaused = true;
+  //   };
 
-    const handleMouseLeave = () => {
-      isPaused = false;
-    };
+  //   const handleMouseLeave = () => {
+  //     isPaused = false;
+  //   };
 
-    // Start animation
-    animationFrameId = requestAnimationFrame(scroll);
+  //   // Start animation
+  //   animationFrameId = requestAnimationFrame(scroll);
 
-    // Pause on hover
-    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
-    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
+  //   // Pause on hover
+  //   scrollContainer.addEventListener("mouseenter", handleMouseEnter);
+  //   scrollContainer.addEventListener("mouseleave", handleMouseLeave);
 
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
-      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
+  //   return () => {
+  //     if (animationFrameId) {
+  //       cancelAnimationFrame(animationFrameId);
+  //     }
+  //     scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
+  //     scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+  //   };
+  // }, []);
 
   return (
     <section className="py-28 md:py-36 bg-[#0a0a0a] text-white relative overflow-hidden">
@@ -178,11 +178,9 @@ export function AdExamples() {
 
         {/* Horizontal Auto-Scrolling Carousel */}
         <div 
-          ref={scrollRef}
-          className="overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide"
-          style={{ scrollBehavior: "auto" }}
+          className="overflow-hidden pb-8 -mx-4 px-4"
         >
-          <div className="flex gap-4 md:gap-6 min-w-max">
+          <div className="flex gap-4 md:gap-6 min-w-max scroller">
             {/* Duplicate items for seamless loop */}
             {[...examples, ...examples].map((example, index) => (
               <div key={`${example.id}-${index}`} className="shrink-0 w-56 md:w-64 group cursor-pointer">
