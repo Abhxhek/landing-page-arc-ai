@@ -57,20 +57,20 @@ export function Hero() {
       <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10 h-full flex items-center">
         {/* Three Column Layout: Images - Text - Images */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
-          
+
           {/* Left Column - Phone Mockups Scrolling Down */}
           <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left bg-transparent" style={{ height: '80vh', background: 'transparent' }}>
             <div className="flex flex-col gap-4 bg-transparent " style={{ animation: 'scrollDown 30s linear infinite' }}>
               {/* Triple images for seamless infinite loop */}
               {[...heroImages.slice(0, 4), ...heroImages.slice(0, 4), ...heroImages.slice(0, 4)].map((imageUrl, index) => (
-                <div key={`left-${index}`} className="relative w-48 flex-shrink-0">
-                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
+                <div key={`left-${index}`} className="relative w-48 shrink-0">
+                  <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
-                    
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-xl z-10" />
+
                     {/* Phone mockup content */}
-                    <div className="absolute inset-0 pt-8 px-2 pb-2">
-                      <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
+                    <div className="absolute inset-0 p-2">
+                      <div className="w-full h-full rounded-4xl overflow-hidden relative">
                         <Image
                           src={imageUrl}
                           alt={`Hero ad example ${(index % 4) + 1}`}
@@ -96,25 +96,25 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-[-0.03em] text-black leading-[1.1] animate-fade-in-up">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 tracking-[-0.03em] text-black leading-[1.1] animate-fade-in-up">
               Create winning ads{" "}
               <span className="italic font-serif font-normal">with AI</span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base md:text-lg text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className=" text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
               Use our library of 1,000+ captivating AI Actors, or create your own AI Avatar from a single photo.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* CTA Button */}
-              <Button 
-                size="lg" 
-                className="bg-black hover:bg-gray-800 text-white px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+              <Button
+                size="lg"
+                className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
               >
-                Create Your AI Ad <ArrowRight className="ml-2 h-5 w-5" />
+                Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300" />
               </Button>
-              <button className="text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40">
+              <button className="cursor-pointer text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40">
                 Watch 1-min video
               </button>
             </div>
@@ -122,8 +122,14 @@ export function Hero() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {[1, 2, 3].map((item) => (
-                    <div key={item} className="h-8 w-8 rounded-full bg-black/5 border border-white" />
+                  {['H', 'M', 'P'].map((i) => (
+                    <div
+                      key={i}
+                      className={`h-8 w-8 rounded-full border border-white text-white flex items-center justify-center`}
+                      style={{ backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 20%)` }}
+                    >
+                      {i}
+                    </div>
                   ))}
                 </div>
                 <span>4.9/5 rating from 10M+ ads</span>
@@ -138,14 +144,14 @@ export function Hero() {
             <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
               {/* Triple images for seamless infinite loop */}
               {[...heroImages.slice(4, 8), ...heroImages.slice(4, 8), ...heroImages.slice(4, 8)].map((imageUrl, index) => (
-                <div key={`right-${index}`} className="relative w-48 flex-shrink-0">
-                  <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
+                <div key={`right-${index}`} className="relative w-48 shrink-0">
+                  <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-3xl z-10" />
-                    
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-xl z-10" />
+
                     {/* Phone mockup content */}
-                    <div className="absolute inset-0 pt-8 px-2 pb-2">
-                      <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
+                    <div className="absolute inset-0 p-2">
+                      <div className="w-full h-full rounded-4xl overflow-hidden relative">
                         <Image
                           src={imageUrl}
                           alt={`Hero ad example ${(index % 4) + 5}`}
@@ -178,7 +184,7 @@ export function Hero() {
               <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
                 {/* Phone frame with notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-10" />
-                
+
                 {/* Phone mockup content */}
                 <div className="absolute inset-0 p-2">
                   <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
