@@ -9,9 +9,9 @@ export function AdExamples() {
 
   // Pexels royalty-free images for ad mockups
   const examples = [
-    { 
-      id: 1, 
-      brand: "Coursiv",
+    {
+      id: 1,
+      brand: "Instagram",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "We asked ChatGPT for 20 reasons to call off work. Which one are you using next?",
@@ -20,9 +20,9 @@ export function AdExamples() {
       delta: "+195%",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 2, 
-      brand: "Learna",
+    {
+      id: 2,
+      brand: "YouTube",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Want to scale your accounts like crazy in 30 seconds without lifting a finger?",
@@ -31,9 +31,9 @@ export function AdExamples() {
       delta: "+195%",
       image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 3, 
-      brand: "Glam",
+    {
+      id: 3,
+      brand: "Snapchat",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Transform your photo into a professional shoot with Glam AI.",
@@ -42,9 +42,9 @@ export function AdExamples() {
       delta: "+95%",
       image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 4, 
-      brand: "MellowFlow",
+    {
+      id: 4,
+      brand: "X (Twitter)",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Struggling with procrastination? Here's how MellowFlow keeps ADHD brains on track.",
@@ -53,9 +53,9 @@ export function AdExamples() {
       delta: "+270%",
       image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 5, 
-      brand: "Glam",
+    {
+      id: 5,
+      brand: "Facebook",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Build it. Animate it. Own your style. Try our new Glam feature today.",
@@ -64,9 +64,9 @@ export function AdExamples() {
       delta: "+14%",
       image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 6, 
-      brand: "Learna",
+    {
+      id: 6,
+      brand: "Snapchat",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Make your brand pop with #glamai and turn every viewer into a buyer.",
@@ -75,9 +75,9 @@ export function AdExamples() {
       delta: "+17%",
       image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 7, 
-      brand: "MellowFlow",
+    {
+      id: 7,
+      brand: "X (Twitter)",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "¡Superar la procrastinación no debería ser difícil! Descubre MellowFlow.",
@@ -86,9 +86,9 @@ export function AdExamples() {
       delta: "+26%",
       image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
     },
-    { 
-      id: 8, 
-      brand: "My IQ",
+    {
+      id: 8,
+      brand: "Instagram",
       tag: "Sponsored",
       status: "ACTIVE",
       text: "Boost your brain in 30 seconds a day with My IQ. Tap to see how.",
@@ -111,14 +111,14 @@ export function AdExamples() {
   //   const scroll = () => {
   //     if (scrollContainer && !isPaused) {
   //       scrollContainer.scrollLeft += scrollSpeed;
-        
+
   //       // Reset scroll when we've scrolled through half (duplicated items)
   //       const maxScroll = scrollContainer.scrollWidth / 2;
   //       if (scrollContainer.scrollLeft >= maxScroll) {
   //         scrollContainer.scrollLeft = 0;
   //       }
   //     }
-      
+
   //     animationFrameId = requestAnimationFrame(scroll);
   //   };
 
@@ -151,23 +151,22 @@ export function AdExamples() {
       {/* Background effects */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute -top-40 left-1/3 h-96 w-96 bg-[#6b4dff]/15 blur-[150px]" />
-      
+
       <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
         <div className="mb-16 md:mb-20">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-4">Zyka Coursiv</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Coursiv</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-4">Zyka Instagram</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Instagram</h2>
             </div>
             <div className="flex flex-wrap gap-3 text-xs">
               {["All", "UGC", "Reviews", "Actors", "Statement"].map((tag) => (
                 <button
                   key={tag}
-                  className={`px-5 py-2.5 rounded-full border font-medium transition-all duration-300 ${
-                    tag === "All" 
-                      ? "bg-white text-black border-white shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-105" 
-                      : "border-white/20 text-white/70 hover:border-white/40 hover:text-white/90 hover:bg-white/5"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full border font-medium transition-all duration-300 ${tag === "All"
+                    ? "bg-white text-black border-white shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-105"
+                    : "border-white/20 text-white/70 hover:border-white/40 hover:text-white/90 hover:bg-white/5"
+                    }`}
                 >
                   {tag}
                 </button>
@@ -177,7 +176,7 @@ export function AdExamples() {
         </div>
 
         {/* Horizontal Auto-Scrolling Carousel */}
-        <div 
+        <div
           className="overflow-hidden pb-8 -mx-4 px-4"
         >
           <div className="flex gap-4 md:gap-6 min-w-max scroller">
@@ -187,7 +186,7 @@ export function AdExamples() {
                 <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#161616] to-[#0a0a0a] p-2 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] border border-white/[0.06] hover:border-white/[0.12] aspect-9/16 transition-all duration-300">
                   {/* Phone notch */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-gradient-to-b from-[#161616] to-[#0a0a0a] rounded-b-xl z-30 backdrop-blur-sm" />
-                  
+
                   {/* Phone frame */}
                   <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative bg-black">
                     {/* Real image from Pexels */}
@@ -199,7 +198,7 @@ export function AdExamples() {
                       sizes="(max-width: 768px) 224px, 256px"
                       unoptimized
                     />
-                    
+
                     {/* Overlay gradient for text readability */}
                     <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent" />
 
@@ -218,11 +217,11 @@ export function AdExamples() {
                         </p>
                         <div className="flex items-center justify-between text-white/90 text-xs font-semibold">
                           <div>
-                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><Eye size={12}/>Views</p>
+                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><Eye size={12} />Views</p>
                             <p>{example.views}</p>
                           </div>
                           <div className="text-right">
-                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><ArrowUpLeft color="green" size={13}/>Revenue</p>
+                            <p className="uppercase tracking-[0.4em] text-white/50 text-[10px] flex gap-1"><ArrowUpLeft color="green" size={13} />Revenue</p>
                             <p>{example.revenue} <span className="text-green-400">{example.delta}</span></p>
                           </div>
                         </div>

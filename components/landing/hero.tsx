@@ -97,13 +97,13 @@ export function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 tracking-[-0.03em] text-black leading-[1.1] animate-fade-in-up">
-              Create winning ads{" "}
-              <span className="italic font-serif font-normal">with AI</span>
+              AI that creates ads{" "}
+              <span className="italic font-serif font-normal">that works</span>
             </h1>
 
             {/* Sub-headline */}
             <p className=" text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
-              Use our library of 1,000+ captivating AI Actors, or create your own AI Avatar from a single photo.
+              Choose from 1,000+ captivating AI actors—or turn your photo into a custom AI avatar.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

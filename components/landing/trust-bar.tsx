@@ -29,10 +29,10 @@ export function TrustBar() {
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-[0.35em] text-white/50 mb-5">Zyka AI</p>
           <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight leading-tight">
-            Used by millions of <span className="italic font-serif font-normal">the best marketers</span>
+            Chosen by millions of the world’s <span className="italic font-serif font-normal">best marketers</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Powering high-performing creative for agencies, DTC brands, B2B SaaS & enterprise teams worldwide.
+          <p className="text-gray-400 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+            Driving top-performing creative for leading agencies, DTC brands, B2B SaaS, and enterprise teams across the globe.
           </p>
         </div>
 

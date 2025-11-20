@@ -38,12 +38,12 @@ export function Features() {
             <div>
               <p className="text-xs uppercase tracking-[0.38em] text-white/50 mb-5 font-medium">Zyka AI Studio</p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight leading-tight">
-                The most realistic and{" "}
-                <span className="italic font-serif font-normal">captivating</span> AI Actors
+                The most lifelike and{" "}
+                <span className="italic font-serif font-normal">engaging</span> AI actors available
               </h2>
               
               <p className="text-base md:text-lg text-white/70 mb-10 leading-relaxed">
-                1,000+ AI talents across every vertical. Localized voices, expressions, gestures & pacing fine-tuned to your product.
+                Over 1,000 AI talents for every vertical — with localized voices, expressions, gestures, and pacing finely tuned to your brand.
               </p>
 
               <button className="bg-white text-black px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-[0_20px_60px_rgba(255,255,255,0.15)] hover:shadow-[0_25px_80px_rgba(255,255,255,0.25)] hover:scale-105">

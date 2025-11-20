@@ -10,7 +10,7 @@ The landing page is built with a modular component architecture, with each secti
 
 1. **Hero** (`hero.tsx`)
    - The main hero section with animated phone mockups
-   - Features the primary headline "Create winning ads with AI"
+   - Features the primary headline "AI that creates ads that work"
    - Includes floating animation effects on phone mockups
    - Primary CTA button
 

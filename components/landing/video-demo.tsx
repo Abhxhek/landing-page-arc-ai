@@ -21,16 +21,15 @@ export function VideoDemo() {
               </h2>
 
               <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed">
-                Watch how easy it is to generate professional-quality advertisements
-                with our AI-powered platform. No design skills needed.
+                See how effortlessly you can create professional-quality ads with our AI platform — no design skills required.
               </p>
 
               <ul className="space-y-5 mb-10">
                 {[
-                  "AI-powered script generation",
-                  "Professional voiceover options",
-                  "Automatic scene composition",
-                  "Brand-aligned styling",
+                  "Instant AI-generated scripts",
+                  "Professional-grade voiceovers",
+                  "Smart, automated scene building",
+                  "Styling that matches your brand",
                 ].map((feature) => (
                   <li key={feature} className="flex items-start group">
                     <div className="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center mr-4 mt-0.5 shadow-lg group-hover:scale-110 transition-transform">
@@ -46,13 +45,12 @@ export function VideoDemo() {
                         <path d="M5 13l4 4L19 7"></path>
                       </svg>
                     </div>
-                    <span className="text-lg md:text-xl text-gray-700 font-medium">{feature}</span>
+                    <span className="text-sm md:text-lg text-gray-700 font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <Button
-              
                 size="lg"
                 className="w-2xs group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
               >

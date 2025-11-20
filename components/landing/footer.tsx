@@ -3,7 +3,7 @@ import { Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const footerLinks = {
     Product: [
       { name: "Features", href: "/features" },
@@ -47,8 +47,7 @@ export function Footer() {
               <span className="text-3xl font-bold text-black">zyka.ai</span>
             </div>
             <p className="text-gray-600 text-base mb-8 leading-relaxed max-w-sm">
-              Create winning ads with AI. The most realistic and personalized UGC ads
-              for your marketing campaigns.
+              Create high-performing ads with AI — featuring ultra-realistic, personalized UGC tailored to your marketing campaigns.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
