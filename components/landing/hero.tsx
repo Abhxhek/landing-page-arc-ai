@@ -122,15 +122,19 @@ export function Hero() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {['H', 'M', 'P'].map((i) => (
-                    <div
-                      key={i}
-                      className={`h-8 w-8 rounded-full border border-white text-white flex items-center justify-center`}
-                      style={{ backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 20%)` }}
-                    >
-                      {i}
-                    </div>
-                  ))}
+                  {['H', 'M', 'P'].map((i, index) => {
+                    // Deterministic colors based on index to avoid hydration mismatch
+                    const colors = ['hsl(28 80% 20%)', 'hsl(262 80% 20%)', 'hsl(349 80% 20%)'];
+                    return (
+                      <div
+                        key={i}
+                        className={`h-8 w-8 rounded-full border border-white text-white flex items-center justify-center`}
+                        style={{ backgroundColor: colors[index] }}
+                      >
+                        {i}
+                      </div>
+                    );
+                  })}
                 </div>
                 <span>4.9/5 rating from 10M+ ads</span>
               </div>
