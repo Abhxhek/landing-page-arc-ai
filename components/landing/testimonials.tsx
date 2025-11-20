@@ -51,18 +51,17 @@ export function Testimonials() {
             >
               <div className="flex items-start gap-5 mb-6">
                 
-                {/* Avatar */}
-                {/* <div className="w-16 h-16 rounded-full overflow-hidden relative ring-2 ring-black/5 flex-shrink-0"> */}
+                {/* Logo Container */}
+                <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.company}
-                    // fill
-                    width={50}
-                    height={100}
-                    className="object-cover"
+                    width={64}
+                    height={64}
+                    className="object-contain max-w-full max-h-full"
                     unoptimized
                   />
-                {/* </div> */}
+                </div>
 
                 {/* Company Name */}
                 <div className="flex flex-col">
@@ -74,7 +73,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+              <blockquote className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
                 "{testimonial.quote}"
               </blockquote>
 
