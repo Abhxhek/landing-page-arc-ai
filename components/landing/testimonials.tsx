@@ -29,7 +29,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-28 md:py-36 bg-gradient-to-b from-white via-[#fefcfb] to-white">
+    <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-gradient-to-b from-white via-[#fefcfb] to-white">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         
         {/* Section Heading */}

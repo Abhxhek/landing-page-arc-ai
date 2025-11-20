@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export function VideoDemo() {
   return (
-    <section className="py-32 md:py-40 bg-gradient-to-b from-[#fefcfb] via-white to-[#fefcfb]">
+    <section className="pt-12 md:pt-16 pb-32 md:pb-40 bg-gradient-to-b from-[#fefcfb] via-white to-[#fefcfb]">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
