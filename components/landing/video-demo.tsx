@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function VideoDemo() {
   return (
@@ -50,12 +53,14 @@ export function VideoDemo() {
                 ))}
               </ul>
 
-              <Button
-                size="lg"
-                className="w-2xs group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
-              >
-                Try it yourself <ArrowRight className="group-hover:translate-x-2 duration-300" />
-              </Button>
+              <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="w-2xs group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+                >
+                  Try it yourself <ArrowRight className="group-hover:translate-x-2 duration-300" />
+                </Button>
+              </Link>
             </div>
 
             {/* Video Side */}

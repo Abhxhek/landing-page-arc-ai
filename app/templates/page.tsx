@@ -1,6 +1,9 @@
+"use client";
+
 import { PageLayout } from "@/components/shared/page-layout";
 import Image from "next/image";
 import { Play } from "lucide-react";
+import Link from "next/link";
 
 export default function TemplatesPage() {
   const templateCategories = [
@@ -200,9 +203,11 @@ export default function TemplatesPage() {
             <p className="text-xl text-gray-300 mb-8">
               Browse our template library and create your first ad in minutes
             </p>
-            <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
-              Explore Templates
-            </button>
+            <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+              <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Explore Templates
+              </button>
+            </Link>
           </div>
         </div>
       </div>

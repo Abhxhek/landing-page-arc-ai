@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   // Pexels images for hero phone mockups
@@ -108,12 +109,14 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* CTA Button */}
-              <Button
-                size="lg"
-                className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
-              >
-                Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300" />
-              </Button>
+              <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+                >
+                  Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300" />
+                </Button>
+              </Link>
               <button className="cursor-pointer text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40">
                 Watch 1-min video
               </button>
