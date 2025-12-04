@@ -2,19 +2,18 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export function Hero() {
-  // Pexels images for hero phone mockups
-  const heroImages = [
-    "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+  // Videos for hero phone mockups
+  const heroVideos = [
+    "/video_1.mp4",
+    "/video_2.mp4",
+    "/video_3.mp4",
+    "/video_4.mp4",
+    "/video_5.mp4",
+    "/video_6.mp4",
+    "/video_7.mp4",
+    "/video_8.mp4",
   ];
 
   return (
@@ -61,8 +60,8 @@ export function Hero() {
           {/* Left Column - Phone Mockups Scrolling Down */}
           <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left bg-transparent" style={{ height: '80vh', background: 'transparent' }}>
             <div className="flex flex-col gap-4 bg-transparent " style={{ animation: 'scrollDown 30s linear infinite' }}>
-              {/* Triple images for seamless infinite loop */}
-              {[...heroImages.slice(0, 4), ...heroImages.slice(0, 4), ...heroImages.slice(0, 4)].map((imageUrl, index) => (
+              {/* Triple videos for seamless infinite loop */}
+              {[...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4)].map((videoUrl, index) => (
                 <div key={`left-${index}`} className="relative w-48 shrink-0">
                   <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
@@ -71,13 +70,13 @@ export function Hero() {
                     {/* Phone mockup content */}
                     <div className="absolute inset-0 p-2">
                       <div className="w-full h-full rounded-4xl overflow-hidden relative">
-                        <Image
-                          src={imageUrl}
-                          alt={`Hero ad example ${(index % 4) + 1}`}
-                          fill
-                          className="object-cover"
-                          sizes="200px"
-                          unoptimized
+                        <video
+                          src={videoUrl}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
@@ -146,8 +145,8 @@ export function Hero() {
           {/* Right Column - Phone Mockups Scrolling Up */}
           <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-right" style={{ height: '80vh', background: 'transparent' }}>
             <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
-              {/* Triple images for seamless infinite loop */}
-              {[...heroImages.slice(4, 8), ...heroImages.slice(4, 8), ...heroImages.slice(4, 8)].map((imageUrl, index) => (
+              {/* Triple videos for seamless infinite loop */}
+              {[...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8)].map((videoUrl, index) => (
                 <div key={`right-${index}`} className="relative w-48 shrink-0">
                   <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
@@ -156,13 +155,13 @@ export function Hero() {
                     {/* Phone mockup content */}
                     <div className="absolute inset-0 p-2">
                       <div className="w-full h-full rounded-4xl overflow-hidden relative">
-                        <Image
-                          src={imageUrl}
-                          alt={`Hero ad example ${(index % 4) + 5}`}
-                          fill
-                          className="object-cover"
-                          sizes="200px"
-                          unoptimized
+                        <video
+                          src={videoUrl}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
@@ -174,9 +173,9 @@ export function Hero() {
 
         </div>
 
-        {/* Mobile View - Show images at bottom for smaller screens */}
+        {/* Mobile View - Show videos at bottom for smaller screens */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto px-4 mt-12 lg:hidden">
-          {heroImages.map((imageUrl, index) => (
+          {heroVideos.map((videoUrl, index) => (
             <div
               key={index}
               className="relative"
@@ -192,13 +191,13 @@ export function Hero() {
                 {/* Phone mockup content */}
                 <div className="absolute inset-0 p-2">
                   <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
-                    <Image
-                      src={imageUrl}
-                      alt={`Hero ad example ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      unoptimized
+                    <video
+                      src={videoUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>

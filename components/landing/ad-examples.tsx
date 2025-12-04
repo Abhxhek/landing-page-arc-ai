@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { ArrowUp01, ArrowUp01Icon, ArrowUp10, ArrowUpAz, ArrowUpCircle, ArrowUpLeft, Eye } from "lucide-react";
 
 export function AdExamples() {
   // const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Pexels royalty-free images for ad mockups
+  // Videos for ad mockups
   const examples = [
     {
       id: 1,
@@ -18,7 +17,7 @@ export function AdExamples() {
       views: "12.6K",
       revenue: "$16K",
       delta: "+195%",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_1.mp4"
     },
     {
       id: 2,
@@ -29,7 +28,7 @@ export function AdExamples() {
       views: "12.6K",
       revenue: "$16K",
       delta: "+195%",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_2.mp4"
     },
     {
       id: 3,
@@ -40,7 +39,7 @@ export function AdExamples() {
       views: "18.5K",
       revenue: "$27K",
       delta: "+95%",
-      image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_3.mp4"
     },
     {
       id: 4,
@@ -51,7 +50,7 @@ export function AdExamples() {
       views: "25.2K",
       revenue: "$32K",
       delta: "+270%",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_4.mp4"
     },
     {
       id: 5,
@@ -62,7 +61,7 @@ export function AdExamples() {
       views: "15.1K",
       revenue: "$18K",
       delta: "+14%",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_5.mp4"
     },
     {
       id: 6,
@@ -73,7 +72,7 @@ export function AdExamples() {
       views: "11.8K",
       revenue: "$19K",
       delta: "+17%",
-      image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_6.mp4"
     },
     {
       id: 7,
@@ -84,7 +83,7 @@ export function AdExamples() {
       views: "11.2K",
       revenue: "$10.1K",
       delta: "+26%",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_7.mp4"
     },
     {
       id: 8,
@@ -95,7 +94,7 @@ export function AdExamples() {
       views: "9K",
       revenue: "$14K",
       delta: "+120%",
-      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+      video: "/video_8.mp4"
     },
   ];
 
@@ -189,14 +188,14 @@ export function AdExamples() {
 
                   {/* Phone frame */}
                   <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative bg-black">
-                    {/* Real image from Pexels */}
-                    <Image
-                      src={example.image}
-                      alt={example.text}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 224px, 256px"
-                      unoptimized
+                    {/* Video */}
+                    <video
+                      src={example.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
                     />
 
                     {/* Overlay gradient for text readability */}

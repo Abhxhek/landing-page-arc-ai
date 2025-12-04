@@ -1,25 +1,45 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { useMemo } from "react";
 
 export function Features() {
+  // All 8 videos available
+  const allVideos = [
+    "/video_1.mp4",
+    "/video_2.mp4",
+    "/video_3.mp4",
+    "/video_4.mp4",
+    "/video_5.mp4",
+    "/video_6.mp4",
+    "/video_7.mp4",
+    "/video_8.mp4",
+  ];
+
+  // Randomly select 3 videos on each render/refresh
+  const selectedVideos = useMemo(() => {
+    const shuffled = [...allVideos].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 3);
+  }, []);
+
   const phones = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/769421/pexels-photo-769421.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
+      video: selectedVideos[0],
       rotation: -12,
       translateX: -40,
       translateY: 20,
     },
     {
       id: 2,
-      image: "https://images.pexels.com/photos/1181400/pexels-photo-1181400.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
+      video: selectedVideos[1],
       rotation: 0,
       translateX: 0,
       translateY: -10,
     },
     {
       id: 3,
-      image: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
+      video: selectedVideos[2],
       rotation: 10,
       translateX: 50,
       translateY: 30,
@@ -66,13 +86,12 @@ export function Features() {
                   >
                     <div className="absolute inset-0 p-2.5">
                       <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative">
-                        <Image
-                          src={phone.image}
-                          alt="AI actor"
-                          fill
-                          className="object-cover transition-transform duration-500"
-                          sizes="(max-width: 768px) 176px, 208px"
-                          unoptimized
+                        <video
+                          src={phone.video}
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
