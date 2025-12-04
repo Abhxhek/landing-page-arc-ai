@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function Header() {
   const { push } = useRouter();
@@ -12,9 +13,11 @@ export function Header() {
           zyka.ai
         </div>
 
-        <button className="cursor-pointer rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04]">
-          Login or Sign up
-        </button>
+        <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+          <button className="cursor-pointer rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04]">
+            Login or Sign up
+          </button>
+        </Link>
       </div>
     </header>
   );

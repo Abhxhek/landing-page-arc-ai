@@ -91,7 +91,7 @@ export function Footer() {
         <div className="border-t border-gray-200 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-gray-600 text-sm font-medium">
-              © {currentYear} Zyka. All rights reserved.
+              © {currentYear} Zyka. All rights reserved by Richa Yahsvant Singh.
             </div>
             <div className="flex gap-8 text-sm">
               <Link href="/privacy" className="text-gray-600 hover:text-black transition-colors font-medium">

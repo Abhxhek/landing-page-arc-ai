@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function CTASection() {
   return (
@@ -27,9 +30,11 @@ export function CTASection() {
 
           {/* CTA Button */}
           <div className="flex justify-center items-center mb-16">
-            <button className="bg-white text-black px-12 py-6 rounded-full font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-[0_30px_90px_rgba(0,0,0,0.4)] hover:shadow-[0_35px_110px_rgba(0,0,0,0.5)] flex items-center gap-3 duration-300">
-              Create Your Free Ad <ArrowRight className="h-6 w-6" />
-            </button>
+            <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+              <button className="bg-white text-black px-12 py-6 rounded-full font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-[0_30px_90px_rgba(0,0,0,0.4)] hover:shadow-[0_35px_110px_rgba(0,0,0,0.5)] flex items-center gap-3 duration-300">
+                Create Your Free Ad <ArrowRight className="h-6 w-6" />
+              </button>
+            </Link>
           </div>
 
           {/* Trust indicators */}

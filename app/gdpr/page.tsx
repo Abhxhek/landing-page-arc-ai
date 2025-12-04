@@ -38,7 +38,7 @@ export default function GDPRPage() {
   return (
     <PageLayout>
       <div className="pt-32 pb-20">
-        <div className="container mx-auto px-6 md:px-8 lg:px-12 max-w-4xl">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 max-w-7xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
@@ -182,6 +182,16 @@ export default function GDPRPage() {
             >
               Contact Privacy Team
             </a>
+          </div>
+
+          {/* Copyright and Ownership */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <p className="text-gray-700 font-medium mb-2">
+              All rights reserved by Richa Yashvant Singh
+            </p>
+            <p className="text-gray-700 font-medium">
+              Zyka.ai is owned and managed by Richa Yashvant Singh
+            </p>
           </div>
         </div>
       </div>
