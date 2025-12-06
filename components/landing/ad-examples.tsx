@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUp01, ArrowUp01Icon, ArrowUp10, ArrowUpAz, ArrowUpCircle, ArrowUpLeft, Eye } from "lucide-react";
+import { VideoModal } from "@/components/ui/video-modal";
 
 export function AdExamples() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const scrollRef = useRef<HTMLDivElement>(null);
 
   // Videos for ad mockups
@@ -181,7 +184,14 @@ export function AdExamples() {
           <div className="flex gap-4 md:gap-6 min-w-max scroller">
             {/* Duplicate items for seamless loop */}
             {[...examples, ...examples].map((example, index) => (
-              <div key={`${example.id}-${index}`} className="shrink-0 w-56 md:w-64 group cursor-pointer">
+              <div 
+                key={`${example.id}-${index}`} 
+                className="shrink-0 w-56 md:w-64 group cursor-pointer"
+                onClick={() => {
+                  setSelectedVideo(example.video);
+                  setIsModalOpen(true);
+                }}
+              >
                 <div className="relative rounded-[2.5rem] bg-gradient-to-b from-[#161616] to-[#0a0a0a] p-2 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_120px_-35px_rgba(0,0,0,0.95)] border border-white/[0.06] hover:border-white/[0.12] aspect-9/16 transition-all duration-300">
                   {/* Phone notch */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-gradient-to-b from-[#161616] to-[#0a0a0a] rounded-b-xl z-30 backdrop-blur-sm" />
@@ -240,6 +250,16 @@ export function AdExamples() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        videoSrc={selectedVideo}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedVideo(null);
+        }}
+      />
     </section>
   );
 }

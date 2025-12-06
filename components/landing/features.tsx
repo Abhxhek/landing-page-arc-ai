@@ -1,9 +1,12 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
+import { VideoModal } from "@/components/ui/video-modal";
 
 export function Features() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // All 8 videos available
   const allVideos = [
     "/video_1.mp4",
@@ -16,11 +19,24 @@ export function Features() {
     "/video_8.mp4",
   ];
 
-  // Randomly select 3 videos on each render/refresh
-  const selectedVideos = useMemo(() => {
+  // Default videos for SSR (same on server and client initially)
+  const defaultVideos = ["/video_1.mp4", "/video_2.mp4", "/video_3.mp4"];
+  
+  // Randomly select 3 videos only on client side after mount
+  const [selectedVideos, setSelectedVideos] = useState<string[]>(defaultVideos);
+
+  useEffect(() => {
+    // Only run on client side after hydration
     const shuffled = [...allVideos].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 3);
+    setSelectedVideos(shuffled.slice(0, 3));
   }, []);
+
+  // Track loading state for each video
+  const [loadedVideos, setLoadedVideos] = useState<Set<number>>(new Set());
+
+  const handleVideoLoad = (phoneId: number) => {
+    setLoadedVideos((prev) => new Set(prev).add(phoneId));
+  };
 
   const phones = [
     {
@@ -78,20 +94,37 @@ export function Features() {
                 {phones.map((phone) => (
                   <div
                     key={phone.id}
-                    className="absolute top-1/2 left-1/2 w-44 md:w-52 aspect-9/16 rounded-[2.3rem] bg-gradient-to-b from-[#1a1a1a] to-black shadow-[0_50px_150px_-40px_rgba(0,0,0,0.8)] border border-white/[0.12] overflow-hidden transition-all duration-500 hover:scale-105 hover:z-50"
+                    className="absolute top-1/2 left-1/2 w-44 md:w-52 aspect-9/16 rounded-[2.3rem] bg-gradient-to-b from-[#1a1a1a] to-black shadow-[0_50px_150px_-40px_rgba(0,0,0,0.8)] border border-white/[0.12] overflow-hidden transition-all duration-500 hover:scale-105 hover:z-50 cursor-pointer"
                     style={{
                       transform: `translate(-50%, -50%) rotate(${phone.rotation}deg) translateX(${phone.translateX}px) translateY(${phone.translateY}px)`,
                       zIndex: phone.id,
                     }}
+                    onClick={() => {
+                      setSelectedVideo(phone.video);
+                      setIsModalOpen(true);
+                    }}
                   >
                     <div className="absolute inset-0 p-2.5">
                       <div className="w-full h-full rounded-[1.8rem] overflow-hidden relative">
+                        {/* Skeleton loader */}
+                        {!loadedVideos.has(phone.id) && (
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0f0f0f] to-[#1a1a1a] animate-pulse">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                              <div className="w-12 h-12 border-2 border-white/20 border-t-white/60 rounded-full animate-spin" />
+                            </div>
+                          </div>
+                        )}
+                        {/* Video */}
                         <video
                           src={phone.video}
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover transition-transform duration-500"
+                          onLoadedData={() => handleVideoLoad(phone.id)}
+                          className={`w-full h-full object-cover transition-opacity duration-500 ${
+                            loadedVideos.has(phone.id) ? "opacity-100" : "opacity-0"
+                          }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
@@ -104,6 +137,16 @@ export function Features() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        videoSrc={selectedVideo}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedVideo(null);
+        }}
+      />
     </section>
   );
 }
