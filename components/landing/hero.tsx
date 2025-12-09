@@ -3,15 +3,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { VideoModal } from "@/components/ui/video-modal";
 
 export function Hero() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Videos for hero phone mockups
   const heroVideos = [
     "/video_1.mp4",
-    "/video_2.mp4",
+    "/video_2.mp4",  
     "/video_3.mp4",
     "/video_4.mp4",
-    "/video_5.mp4",
+    "/video_5.mp4", 
     "/video_6.mp4",
     "/video_7.mp4",
     "/video_8.mp4",
@@ -63,7 +67,14 @@ export function Hero() {
             <div className="flex flex-col gap-4 bg-transparent " style={{ animation: 'scrollDown 30s linear infinite' }}>
               {/* Triple videos for seamless infinite loop */}
               {[...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4)].map((videoUrl, index) => (
-                <div key={`left-${index}`} className="relative w-48 shrink-0">
+                <div 
+                  key={`left-${index}`} 
+                  className="relative w-48 shrink-0 cursor-pointer"
+                  onClick={() => {
+                    setSelectedVideo(videoUrl);
+                    setIsModalOpen(true);
+                  }}
+                >
                   <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-xl z-10" />
@@ -150,7 +161,14 @@ export function Hero() {
             <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
               {/* Triple videos for seamless infinite loop */}
               {[...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8)].map((videoUrl, index) => (
-                <div key={`right-${index}`} className="relative w-48 shrink-0">
+                <div 
+                  key={`right-${index}`} 
+                  className="relative w-48 shrink-0 cursor-pointer"
+                  onClick={() => {
+                    setSelectedVideo(videoUrl);
+                    setIsModalOpen(true);
+                  }}
+                >
                   <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-9/16 relative">
                     {/* Phone frame with notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-xl z-10" />
@@ -181,10 +199,14 @@ export function Hero() {
           {heroVideos.map((videoUrl, index) => (
             <div
               key={index}
-              className="relative"
+              className="relative cursor-pointer"
               style={{
                 animation: `float ${3 + (index % 3)}s ease-in-out infinite`,
                 animationDelay: `${index * 0.15}s`,
+              }}
+              onClick={() => {
+                setSelectedVideo(videoUrl);
+                setIsModalOpen(true);
               }}
             >
               <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
@@ -209,6 +231,16 @@ export function Hero() {
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        videoSrc={selectedVideo}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedVideo(null);
+        }}
+      />
     </section>
   );
 }

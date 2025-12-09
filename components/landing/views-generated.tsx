@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { VideoModal } from "@/components/ui/video-modal";
 
 export function ViewsGenerated() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Videos for ad mockups
   const examples = [
@@ -123,7 +126,14 @@ export function ViewsGenerated() {
             <div className="flex gap-4 md:gap-6 min-w-max">
               {/* Duplicate items for seamless loop */}
               {[...examples, ...examples].map((example, index) => (
-                <div key={`${example.id}-${index}`} className="flex-shrink-0 w-56 md:w-64 group cursor-pointer">
+                <div 
+                  key={`${example.id}-${index}`} 
+                  className="flex-shrink-0 w-56 md:w-64 group cursor-pointer"
+                  onClick={() => {
+                    setSelectedVideo(example.video);
+                    setIsModalOpen(true);
+                  }}
+                >
                   <div className="relative bg-black rounded-[2rem] overflow-hidden aspect-9/16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]">
                     {/* Phone notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-20" />
@@ -167,6 +177,16 @@ export function ViewsGenerated() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        videoSrc={selectedVideo}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedVideo(null);
+        }}
+      />
     </section>
   );
 }

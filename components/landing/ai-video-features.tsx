@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export function AIVideoFeatures() {
   const leftImages = [
-    "https://images.pexels.com/photos/3775534/pexels-photo-3775534.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
-    "https://images.pexels.com/photos/3775087/pexels-photo-3775087.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
+    "/image_1.png",
+    "/image_2.png",
   ];
   const rightImages = [
-    "https://images.pexels.com/photos/3183171/pexels-photo-3183171.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
-    "https://images.pexels.com/photos/3782221/pexels-photo-3782221.jpeg?auto=compress&cs=tinysrgb&w=400&h=700&fit=crop",
+    "/image_3.png",
+    "/image_4.png",
   ];
 
   return (
