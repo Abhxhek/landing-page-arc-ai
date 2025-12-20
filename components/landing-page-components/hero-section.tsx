@@ -1,9 +1,9 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { AnimatedButton } from "@/components/ui/animated-button";
 import { useEffect, useState } from "react";
-import { Globe, Sparkle } from "lucide-react";
+import { Globe, Sparkle, ArrowRight } from "lucide-react";
 
 export default function Hero() {
     const images = [
@@ -51,25 +51,17 @@ export default function Hero() {
                     <Globe size={16} className="text-blue-600 animate-pulse"/>
                     Trusted by 500K+ growth teams worldwide</p>
                 <h1 className="text-5xl font-semibold">
-                    Create winning ads <span className="font-arimo">with AI</span>
+                    Create winning ads <span className="font-dancing">with AI</span>
                 </h1>
                 <p className="text-gray-600 mt-2 text-lg">Use our library of 1,000+ Captivating AI Actors, or create your own AI Avatar</p>
-                <Button className="group relative overflow-hidden rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow">
-                    {/* 1. Invisible copy: Keeps the button width correct */}
-                    <p className="flex items-center gap-2">
-                        <span className="invisible">Create Your AI Ad </span><Sparkle className="" />
-                    </p>
-
-                    {/* 2. Default Text: Absolute positioned, slides up completely */}
-                    <span className="px-4 absolute inset-0 flex items-center justify-start transition-transform duration-300 group-hover:-translate-y-full">
-                        Create Your AI Ad
-                    </span>
-
-                    {/* 3. Hover Text: Absolute positioned, slides in from bottom */}
-                    <span className="px-4 absolute inset-0 flex items-center justify-start translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                        Create Your AI Ad
-                    </span>
-                </Button>
+                <AnimatedButton 
+                    icon={Sparkle} 
+                    iconPosition="right"
+                    align="center"
+                    className="rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow"
+                >
+                    Create Your AI Ad
+                </AnimatedButton>
             </motion.div>
 
             {/* IMAGES */}
@@ -114,6 +106,37 @@ export default function Hero() {
                         <Image src={src} alt="actor" width={160} height={260} className="rounded-xl shadow-2xl" />
                     </motion.div>
                 ))}
+            </div>
+
+            {/* Scroll to explore */}
+            <div className="absolute bottom-8 right-8 flex items-center text-gray-600 z-30">
+                <span className="text-xs font-arimo font-semibold text-gray-600 uppercase">SCROLL TO EXPLORE</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={22}
+                    height={16}
+                    fill="none"
+                    viewBox="0 0 28 24"
+                    className="animate-bounce"
+                >
+                    <rect
+                        x="6"
+                        y="3"
+                        width="16"
+                        height="18"
+                        rx="6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="none"
+                    />
+                    <circle
+                        cx="14"
+                        cy="8"
+                        r="1.3"
+                        fill="currentColor"
+                        className="opacity-60"
+                    />
+                </svg>
             </div>
         </section>
     );
