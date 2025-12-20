@@ -126,3 +126,18 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+@keyframes slide-right-left {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+@layer utilities {
+  .animate-slide-right-left {
+    animation: slide-right-left 1.5s ease-in-out infinite;
+  }
+}

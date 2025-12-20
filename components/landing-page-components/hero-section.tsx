@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Sparkle } from "lucide-react";
+import { Globe, Sparkle } from "lucide-react";
 
 export default function Hero() {
     const images = [
@@ -47,7 +47,9 @@ export default function Hero() {
                             : { opacity: 0 }
                 }
             >
-                <p className="mb-2 text-[16px] drop-shadow-2xl bg-gray-200 shadow px-4 py-2 rounded-full inline-block">Sora 2 pro live</p>
+                <p className="mb-2 text-[16px] drop-shadow-2xl bg-gray-200 shadow px-4 py-2 rounded-full inline-flex items-center gap-2">
+                    <Globe size={16} className="text-blue-600 animate-pulse"/>
+                    Trusted by 500K+ growth teams worldwide</p>
                 <h1 className="text-5xl font-semibold">
                     Create winning ads <span className="font-arimo">with AI</span>
                 </h1>
@@ -55,7 +57,7 @@ export default function Hero() {
                 <Button className="group relative overflow-hidden rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow">
                     {/* 1. Invisible copy: Keeps the button width correct */}
                     <p className="flex items-center gap-2">
-                        <span className="invisible">Create Your AI Ad </span><Sparkle className=""/>
+                        <span className="invisible">Create Your AI Ad </span><Sparkle className="" />
                     </p>
 
                     {/* 2. Default Text: Absolute positioned, slides up completely */}
