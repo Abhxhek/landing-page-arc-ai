@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Zyka.ai - AI that creates ads that work",
   description: "Create stunning, personalized UGC ads in seconds with AI. Used by millions of the best marketers worldwide. No design skills needed.",
   keywords: ["AI ads", "UGC ads", "marketing automation", "ad creation", "AI marketing"],
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
