@@ -36,7 +36,7 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
         return (
             <Button
                 ref={ref}
-                className={cn("group relative overflow-hidden", className)}
+                className={cn("group relative overflow-hidden transition-all hover:scale-105", className)}
                 {...props}
                 onClick={onClick}
             >

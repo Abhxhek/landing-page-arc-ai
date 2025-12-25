@@ -33,7 +33,7 @@ export default function StatsSection({ isInView }: StatsSectionProps) {
 
     return (
         <section className="relative h-[98%] w-[99%] rounded-2xl border border-gray-10 flex flex-col justify-center items-center backdrop-blur-xl z-0 bg-black">          
-            <div className="w-full max-w-3xl mx-auto space-y-8 px-4 py-16 z-20">
+            <div className="w-full max-w-3xl mx-auto space-y-8 px-4 py-16 z-20 ">
                 {/* Header Section */}
                 <div className="text-center space-y-3">
                     <motion.p
@@ -41,7 +41,7 @@ export default function StatsSection({ isInView }: StatsSectionProps) {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <AnimatedButton className="cursor-none text-sm uppercase tracking-wider shadow-2xl rounded-full inline-flex items-center gap-2 px-4 py-2 shadow-white">
+                        <AnimatedButton className="cursor-none text-sm uppercase tracking-wider shadow-2xl rounded-full inline-flex items-center gap-2 px-4 py-2 shadow-white ">
                             ZYKA AI
                         </AnimatedButton>
                     </motion.p>

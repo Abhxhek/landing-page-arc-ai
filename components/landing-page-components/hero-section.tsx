@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { useEffect, useState } from "react";
 import { Globe, Sparkle, ArrowRight } from "lucide-react";
+import LightPillar from "../ui/LightPillar";
 
 export default function Hero() {
     const images = [

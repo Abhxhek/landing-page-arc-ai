@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   return (
     <div className="w-full fixed top-2 flex justify-center bg-transparent px-4 z-10">
       <div className={`w-full flex items-center justify-between px-4 py-4`}>
-        <AnimatedButton className="cursor-none text-sm uppercase tracking-wider shadow-2xl rounded-full inline-flex items-center gap-2 px-4 py-2">
+        <AnimatedButton className=" cursor-none text-sm uppercase tracking-wider shadow-2xl rounded-full inline-flex items-center gap-2 px-4 py-2">
           ZYKA AI
         </AnimatedButton>
         <AnimatedButton className="rounded-2xl text-[16px]">
