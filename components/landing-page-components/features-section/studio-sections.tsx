@@ -5,29 +5,30 @@ import Image from "next/image";
 export default function StudioSections() {
   return (
     <section className="min-h-screen w-full flex items-center justify-center px-4 py-20 bg-black">
+      
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Column - STUDIO • CAPTURE */}
         <motion.div
-          className="flex flex-col"
+          className="flex flex-col gap-2"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-sm uppercase tracking-wider mb-4 text-gray-400">
+          <div className="w-fit text-sm uppercase text-white bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm shadow-2xl">
             STUDIO • CAPTURE
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             Create your own AI Actor
           </h2>
-          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+          <p className="text-gray-300 text-sm">
             Generate realistic AI faces and video from your photos, videos and even your voice.
           </p>
 
           {/* Example Images */}
           <div className="grid grid-cols-2 gap-4">
             <motion.div
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden bg-white/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -46,7 +47,7 @@ export default function StudioSections() {
             </motion.div>
 
             <motion.div
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden bg-white/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -68,26 +69,26 @@ export default function StudioSections() {
 
         {/* Right Column - STUDIO • EDIT */}
         <motion.div
-          className="flex flex-col"
+          className="flex flex-col gap-2"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-sm uppercase tracking-wider mb-4 text-gray-400">
+          <div className="w-fit text-sm uppercase text-white bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm shadow-2xl">
             STUDIO • EDIT
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             AI Video Editing
           </h2>
-          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+          <p className="text-gray-300 text-sm">
             Add AI-FX, music, gestures and voiceovers to your videos.
           </p>
 
           {/* Example Images */}
           <div className="grid grid-cols-2 gap-4">
             <motion.div
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden bg-white/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -106,7 +107,7 @@ export default function StudioSections() {
             </motion.div>
 
             <motion.div
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden bg-white/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

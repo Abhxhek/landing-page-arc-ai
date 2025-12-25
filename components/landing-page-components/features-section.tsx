@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import TrustedBySection from "./features-section/trusted-by-section";
 import AIActorsHero from "./features-section/ai-actors-hero";
 import StudioSections from "./features-section/studio-sections";
-import EmotionLocalizeSection from "./features-section/emotion-localize-section";
 
 interface FeaturesSectionProps {
   isInView: boolean;
@@ -80,11 +79,6 @@ export default function FeaturesSection({ isInView, isLocked }: FeaturesSectionP
       {/* Studio Sections */}
       <div className="min-h-screen snap-start">
         <StudioSections />
-      </div>
-
-      {/* Emotion & Localize Section */}
-      <div className="min-h-screen snap-start">
-        <EmotionLocalizeSection />
       </div>
     </div>
   );

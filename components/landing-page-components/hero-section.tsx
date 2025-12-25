@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { useEffect, useState } from "react";
 import { Globe, Sparkle, ArrowRight } from "lucide-react";
-import LightPillar from "../ui/LightPillar";
+
 
 export default function Hero() {
     const images = [
@@ -37,6 +37,8 @@ export default function Hero() {
     return (
         <section className="relative h-[98%] w-[99%] rounded-2xl border border-gray-10 flex flex-col justify-center items-center overflow-hidden backdrop-blur-xl z-0">
             {/* TEXT — Hidden initially */}
+            
+            
             <motion.div
                 className="relative w-full max-w-5xl text-center z-20"
                 initial={{ opacity: 0, scale: 0.6 }}

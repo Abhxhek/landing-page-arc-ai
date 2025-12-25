@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Github, ContactRound, Contact } from "lucide-react";
 import { AnimatedButton } from "../ui/animated-button";
+import { AnimatedText } from "../ui/animated-text";
 import DarkVeil from "../ui/darkveil";
 import { useRef } from "react";
 import VariableProximity from "../VariableProximity";
@@ -62,17 +63,11 @@ export default function ContactSection() {
         >
           {/* 3D Text Effect */}
           <div className="flex flex-col items-center justify-center mb-6 md:mb-8">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight text-transparent bg-clip-text bg-linear-to-b from-amber-100 via-blue-100 to-blue-800 text-shadow-2xs mb-2">
-              {"CONTACT US".split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="inline-block cursor-pointer transition-transform ease-in-out hover:scale-110 hover:font-extrabold duration-400 text-transparent bg-clip-text bg-linear-to-b from-amber-100 via-blue-100 to-blue-800"
-                  style={{ willChange: "transform" }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-            </h1>
+            <AnimatedText
+              text="CONTACT US"
+              size="2xl"
+              className="mb-2"
+            />
             <p className="mb-4 text-white text-sm">
               We're here to help you with any questions or feedback you may have.
             </p>
