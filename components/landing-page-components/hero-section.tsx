@@ -62,6 +62,7 @@ export default function Hero() {
                     iconPosition="right"
                     align="center"
                     className="rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow"
+                    onClick={() => window.open("https://create.zyka.ai/", "_blank", "noopener,noreferrer")}
                 >
                     Create Your AI Ad
                 </AnimatedButton>

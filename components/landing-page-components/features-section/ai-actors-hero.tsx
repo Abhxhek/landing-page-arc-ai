@@ -48,6 +48,7 @@ export default function AIActorsHero() {
             iconPosition="right"
             align="center"
             className="px-8 py-8 text-lg rounded-2xl hover:bg-white bg-white text-black"
+            onClick={() => window.open("https://create.zyka.ai/", "_blank", "noopener,noreferrer")}
           >
             Browse AI Actors
           </AnimatedButton>

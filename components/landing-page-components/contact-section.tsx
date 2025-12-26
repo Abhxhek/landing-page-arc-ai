@@ -5,36 +5,39 @@ import { AnimatedButton } from "../ui/animated-button";
 import { AnimatedText } from "../ui/animated-text";
 import DarkVeil from "../ui/darkveil";
 import { useRef } from "react";
+import { useBookingModal } from "../shared/booking-modal-provider";
+import Link from "next/link";
 
 export default function ContactSection() {
   const currentYear = new Date().getFullYear();
   const containerRef = useRef(null);
+  const { openModal } = useBookingModal();
 
   const footerLinks = [
     {
       title: "Product",
       links: [
-        { name: "Features", href: "#" },
-        { name: "Pricing", href: "#" },
-        { name: "Updates", href: "#" },
-        { name: "Documentation", href: "#" },
+        { name: "Features", href: "/features" },
+        { name: "Pricing", href: "/pricing" },
+        { name: "Updates", href: "/updates" },
+        { name: "Documentation", href: "/documentation" },
       ],
     },
     {
       title: "Company",
       links: [
-        { name: "About", href: "#" },
-        { name: "Blog", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Contact", href: "#" },
+        { name: "About", href: "/about" },
+        { name: "Blog", href: "/blog" },
+        { name: "Careers", href: "/careers" },
+        { name: "Contact", href: "#", isModal: true },
       ],
     },
     {
       title: "Legal",
       links: [
-        { name: "Privacy", href: "#" },
-        { name: "Terms", href: "#" },
-        { name: "Security", href: "#" },
+        { name: "Privacy", href: "/privacy" },
+        { name: "Terms", href: "/terms" },
+        { name: "Security", href: "/security" },
       ],
     },
   ];
@@ -80,9 +83,11 @@ export default function ContactSection() {
         >
           <AnimatedButton
             align="center"
-            className="rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow bg-white text-black hover:bg-gray-100"
+            className="rounded-2xl text-[16px] mt-4 h-12 px-4 text-lg drop-shadow-2xl shadow bg-white text-black hover:bg-gray-100 group"
+            onClick={openModal}
           >
-            Contact Us
+            <span className="block group-hover:hidden">Contact Us</span>
+            <span className="hidden group-hover:block">Book a Demo</span>
           </AnimatedButton>
         </motion.div>
       </div>
@@ -162,14 +167,28 @@ export default function ContactSection() {
                 <ul className="space-y-2">
                   {column.links.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors text-sm relative
-                                   after:content-[''] after:block after:w-0 after:h-px after:bg-white after:transition-all after:duration-300 after:absolute after:left-0 after:-bottom-0.5
-                                   hover:after:w-full"
-                      >
-                        {link.name}
-                      </a>
+                      {link.isModal ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            openModal();
+                          }}
+                          className="text-gray-400 hover:text-white transition-colors text-sm relative
+                                     after:content-[''] after:block after:w-0 after:h-px after:bg-white after:transition-all after:duration-300 after:absolute after:left-0 after:-bottom-0.5
+                                     hover:after:w-full cursor-pointer"
+                        >
+                          {link.name}
+                        </button>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-gray-400 hover:text-white transition-colors text-sm relative
+                                     after:content-[''] after:block after:w-0 after:h-px after:bg-white after:transition-all after:duration-300 after:absolute after:left-0 after:-bottom-0.5
+                                     hover:after:w-full"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
