@@ -35,14 +35,14 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Image
-                src="/img4.jpg"
+                src="/Ai Img/9b663aef-1925-4388-8504-83bf43bbcb66.png"
                 alt="AI Actor 1"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">
-                <p className="text-xs text-white font-semibold">AI ACTOR 1</p>
+                <p className="text-sm text-white">AI ACTOR 1</p>
               </div>
             </motion.div>
 
@@ -54,14 +54,14 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Image
-                src="/img5.jpg"
+                src="/Ai Img/af3734e5-2088-45c6-9ebf-5425cdf3d5ed.png"
                 alt="AI Actor 2"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">
-                <p className="text-xs text-white font-semibold">AI ACTOR 2</p>
+                <p className="text-sm text-white">AI ACTOR 2</p>
               </div>
             </motion.div>
           </div>
@@ -76,52 +76,54 @@ export default function StudioSections() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="w-fit text-sm uppercase text-white bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm shadow-2xl">
-            STUDIO • EDIT
+            STUDIO • EMOTIONS
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            AI Video Editing
+            AI Emotions videos
           </h2>
           <p className="text-gray-300 text-sm">
-            Add AI-FX, music, gestures and voiceovers to your videos.
+            Infuse your videos with lifelike AI-driven emotions for captivating performances.
           </p>
 
-          {/* Example Images */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Example Videos */}
+          <div className="grid grid-cols-2 gap-2">
             <motion.div
-              className="relative rounded-2xl overflow-hidden bg-white/10"
+              className="relative rounded-2xl overflow-hidden bg-white/10  w-[274px] h-[424px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Image
-                src="/img6.jpg"
-                alt="AI FX & Gestures"
-                width={300}
-                height={400}
+              <video
+                src="/Expression videos/Laughing.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">
-                <p className="text-xs text-white font-semibold">AI FX & GESTURES</p>
+                <p className="text-sm text-white">Laughing</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="relative rounded-2xl overflow-hidden bg-white/10"
+              className="relative rounded-2xl overflow-hidden bg-white/10  w-[274px] h-[424px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Image
-                src="/img1.jpg"
-                alt="AI Video Editing"
-                width={300}
-                height={400}
+              <video
+                src="/Expression videos/Crying.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">
-                <p className="text-xs text-white font-semibold">AI VIDEO EDITING</p>
+                <p className="text-sm text-white">Crying</p>
               </div>
             </motion.div>
           </div>

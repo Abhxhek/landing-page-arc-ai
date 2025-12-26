@@ -6,8 +6,8 @@ interface MobilePhonesSectionProps {
     isInView: boolean;
 }
 
-// Function to generate fixed collage of images with predefined layout
-export function RandomImageCollage({ images }: { images: string[] }) {
+// Function to generate fixed collage of videos with predefined layout
+export function RandomImageCollage({ videos }: { videos: string[] }) {
     // Fixed collage layout - each image has fixed position, size, and rotation
     // Positions adjusted to keep images within bounds when rotated
     const collageLayout = [
@@ -67,11 +67,11 @@ export function RandomImageCollage({ images }: { images: string[] }) {
         },
     ];
 
-    // Map images to the fixed layout
-    const collageItems = images.slice(0, Math.min(collageLayout.length, images.length)).map((img, index) => {
+    // Map videos to the fixed layout
+    const collageItems = videos.slice(0, Math.min(collageLayout.length, videos.length)).map((video, index) => {
         const layout = collageLayout[index];
         return {
-            src: img,
+            src: video,
             left: layout.left,
             top: layout.top,
             width: layout.width,
@@ -111,11 +111,12 @@ export function RandomImageCollage({ images }: { images: string[] }) {
                         transition: { duration: 0.2 } 
                     }}
                 >
-                    <Image
+                    <video
                         src={item.src}
-                        alt={`Collage image ${item.index}`}
-                        width={300}
-                        height={400}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-full object-cover"
                     />
                     </motion.div>
@@ -153,13 +154,28 @@ function MobilePhone({ imageSrc, index }: { imageSrc: string; index: number }) {
 }
 
 export default function MobilePhonesSection({ isInView }: MobilePhonesSectionProps) {
+    // AI Images for mobile phone screens
     const images = [
-        "/img1.jpg",
-        "/img2.jpg",
-        "/img3.jpg",
-        "/img4.jpg",
-        "/img5.jpg",
-        "/img6.jpg",
+        "/Ai Img/02d6202a-e61b-49f4-9337-20bffbc82a29.png",
+        "/Ai Img/0f3d1fbb-a1fa-4a30-9bc1-a7cee23bc154.png",
+        "/Ai Img/158c94f4-1543-44b7-bcb5-d0ee7edc62f2.png",
+        "/Ai Img/3201c4c4-e63c-4b68-9530-5942cb1224174.png",
+        "/Ai Img/404c33fb-8761-4c1e-8e06-211cff213917.png",
+        "/Ai Img/5c7f5fa6-2486-48d6-a22e-0af06cfb4ab35.png",
+        "/Ai Img/75d09814-cef9-4538-8c5c-e05658854af3.png",
+        "/Ai Img/7cb45eda-2a66-4d13-87bb-6a34af54ce6f.png",
+        "/Ai Img/813ea4b5-2575-40bd-95d3-803b9d31f6bf.png",
+        "/Ai Img/8d03322b-a068-48b7-bb9e-896aeb2ff752.png",
+    ];
+
+    // Videos for collage
+    const videos = [
+        "/General videos/Coffee Mug.mp4",
+        "/General videos/Fit Check.mp4",
+        "/General videos/Gaming Streamer Reaction.mp4",
+        "/General videos/Healthy Drink.mp4",
+        "/General videos/Influencer Style Recommendation.mp4",
+        "/General videos/Perfume.mp4",
     ];
 
     // Create 4 columns, each with 5 phones
@@ -206,7 +222,7 @@ export default function MobilePhonesSection({ isInView }: MobilePhonesSectionPro
                     transition={{ duration: 0.6 }}
                     className="z-10 h-full w-full flex justify-center items-center absolute top-0 left-0 right-0 bottom-0"
                 >
-                    <RandomImageCollage images={images} />
+                    <RandomImageCollage videos={videos} />
                 </motion.div>
             </div>
 

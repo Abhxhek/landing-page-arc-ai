@@ -7,13 +7,13 @@ import { Globe, Sparkle, ArrowRight } from "lucide-react";
 
 
 export default function Hero() {
-    const images = [
-        "/img1.jpg",
-        "/img2.jpg",
-        "/img3.jpg",
-        "/img4.jpg",
-        "/img5.jpg",
-        "/img6.jpg",
+    const mediaItems = [
+        { type: "video", src: "/General videos/AI Promo.mp4" },
+        { type: "video", src: "/General videos/Consultant.mp4" },
+        { type: "video", src: "/General videos/Tech.mp4" },
+        { type: "video", src: "/General videos/Crypto.mp4" },
+        { type: "video", src: "/General videos/Educational Explainer.mp4" },
+        { type: "video", src: "/General videos/Studio Podcast.mp4" },
     ];
 
     const [step, setStep] = useState("shuffle-center"); // shuffle-center → text-in → scatter
@@ -67,9 +67,9 @@ export default function Hero() {
                 </AnimatedButton>
             </motion.div>
 
-            {/* IMAGES */}
+            {/* MEDIA (IMAGES & VIDEOS) */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-                {images.map((src, i) => (
+                {mediaItems.map((item, i) => (
                     <motion.div
                         key={i}
                         initial={{ x: 0, y: 0, rotate: 0, opacity: 0, scale: 0.7 }}
@@ -106,7 +106,18 @@ export default function Hero() {
                         className="absolute will-change-transform"
                         style={{ zIndex: i }}
                     >
-                        <Image src={src} alt="actor" width={160} height={260} className="rounded-xl shadow-2xl" />
+                        {item.type === "video" ? (
+                            <video
+                                src={item.src}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="rounded-xl shadow-2xl w-[160px] h-[260px] object-cover"
+                            />
+                        ) : (
+                            <Image src={item.src} alt="actor" width={160} height={260} className="rounded-xl shadow-2xl" />
+                        )}
                     </motion.div>
                 ))}
             </div>
