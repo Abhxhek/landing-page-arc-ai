@@ -73,7 +73,7 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        <motion.button
+        <motion.div
           className="rounded-2xl px-4 text-lg drop-shadow-2xl shadow"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -84,7 +84,7 @@ export default function ContactSection() {
           >
             Contact Us
           </AnimatedButton>
-        </motion.button>
+        </motion.div>
       </div>
 
       {/* Footer */}
