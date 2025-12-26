@@ -76,7 +76,7 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/13.png"
+                    src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/13.png"
                     alt="AI Actor"
                     width={220}
                     height={380}
@@ -100,7 +100,7 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/14.png"
+                    src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/14.png"
                     alt="AI Actor"
                     width={200}
                     height={350}
@@ -124,7 +124,7 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-18 h-5 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/15.png"
+                    src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/15.png"
                     alt="AI Actor"
                     width={180}
                     height={320}

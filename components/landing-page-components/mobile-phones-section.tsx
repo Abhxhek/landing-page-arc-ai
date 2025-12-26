@@ -159,26 +159,26 @@ function MobilePhone({ imageSrc, index }: { imageSrc: string; index: number }) {
 export default function MobilePhonesSection({ isInView }: MobilePhonesSectionProps) {
     // AI Images for mobile phone screens
     const images = [
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/1.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/2.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/3.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/4.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/5.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/6.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/7.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/8.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/9.png",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/10.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/1.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/2.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/3.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/4.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/5.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/6.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/7.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/8.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/9.png",
+        "https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/10.png",
     ];
 
     // Videos for collage
     const videos = [
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/7_general_video.mp4",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/8_general_video.mp4",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/9_general_video.mp4",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/10_general_video.mp4",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/11_general_video.mp4",
-        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/12_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/7_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/8_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/9_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/10_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/11_general_video.mp4",
+        "https://d22ofvg8yrf77k.cloudfront.net/General+videos/12_general_video.mp4",
     ];
 
     // Create 4 columns, each with 5 phones

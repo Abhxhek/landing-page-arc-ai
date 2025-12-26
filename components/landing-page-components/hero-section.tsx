@@ -8,12 +8,12 @@ import { Globe, Sparkle, ArrowRight } from "lucide-react";
 
 export default function Hero() {
     const mediaItems = [
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/1_general_video.mp4" },
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/2_general_video.mp4" },
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/3_general_video.mp4" },
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/4_general_video.mp4" },
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/5_general_video.mp4" },
-        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/6_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/1_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/2_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/3_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/4_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/5_general_video.mp4" },
+        { type: "video", src: "https://d22ofvg8yrf77k.cloudfront.net/General+videos/6_general_video.mp4" },
     ];
 
     const [step, setStep] = useState("shuffle-center"); // shuffle-center → text-in → scatter
@@ -114,7 +114,7 @@ export default function Hero() {
                                 loop
                                 muted
                                 playsInline
-                                preload="auto"
+                                // preload="auto"
                                 className="rounded-xl shadow-2xl w-[160px] h-[260px] object-cover"
                             />
                         ) : (

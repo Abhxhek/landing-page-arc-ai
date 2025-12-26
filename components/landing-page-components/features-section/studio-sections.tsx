@@ -35,7 +35,7 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Image
-                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/11.png"
+                src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/11.png"
                 alt="AI Actor 1"
                 width={300}
                 height={400}
@@ -55,7 +55,7 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Image
-                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/12.png"
+                src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/12.png"
                 alt="AI Actor 2"
                 width={300}
                 height={400}
@@ -97,7 +97,7 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <video
-                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Laughing.mp4"
+                src="https://d22ofvg8yrf77k.cloudfront.net/Expression+videos/Laughing.mp4"
                 autoPlay
                 loop
                 muted
@@ -118,7 +118,7 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <video
-                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Crying.mp4"
+                src="https://d22ofvg8yrf77k.cloudfront.net/Expression+videos/Crying.mp4"
                 autoPlay
                 loop
                 muted

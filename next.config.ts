@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'zyka-ai.s3.ap-south-1.amazonaws.com',
+        hostname: 'd22ofvg8yrf77k.cloudfront.net',
         port: '',
         pathname: '/**',
       },
