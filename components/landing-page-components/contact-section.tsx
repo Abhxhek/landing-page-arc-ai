@@ -5,7 +5,6 @@ import { AnimatedButton } from "../ui/animated-button";
 import { AnimatedText } from "../ui/animated-text";
 import DarkVeil from "../ui/darkveil";
 import { useRef } from "react";
-import VariableProximity from "../VariableProximity";
 
 export default function ContactSection() {
   const currentYear = new Date().getFullYear();

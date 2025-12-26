@@ -43,16 +43,15 @@ export default function AIActorsHero() {
           </p>
 
           {/* CTA Button */}
-          <button className="rounded-lg font-semibold flex items-center gap-2 transition-colors">
-            <AnimatedButton
-              icon={ArrowRight}
-              iconPosition="right"
-              align="center"
-              className="px-8 py-8 text-lg rounded-2xl hover:bg-white bg-white text-black"
-            >
-              Browse AI Actors
-            </AnimatedButton>
-          </button>
+          <AnimatedButton
+            icon={ArrowRight}
+            iconPosition="right"
+            align="center"
+            className="px-8 py-8 text-lg rounded-2xl hover:bg-white bg-white text-black"
+          >
+            Browse AI Actors
+          </AnimatedButton>
+
         </motion.div>
 
         {/* Right Side - Phone Mockups */}
