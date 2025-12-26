@@ -117,7 +117,7 @@ export default function AIActorsHero() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <div className="relative w-[180px] h-[320px] bg-gray-900 rounded-[2.5rem] p-2 shadow-lg border-2 border-gray-800">
+              <div className="relative w-[180px] h-80 bg-gray-900 rounded-[2.5rem] p-2 shadow-lg border-2 border-gray-800">
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-18 h-5 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
