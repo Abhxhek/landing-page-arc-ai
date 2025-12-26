@@ -7,7 +7,7 @@ import { AnimatedButton } from "@/components/ui/animated-button";
 
 export default function AIActorsHero() {
   return (
-    <section className="min-h-screen w-full flex items-center justify-center px-4 py-20 bg-black relative overflow-hidden z-0">
+    <section className="min-h-screen w-full flex items-center justify-center px-4 py-12 sm:py-20 bg-black relative overflow-hidden z-0">
       <div className="absolute top-0 left-0 w-full h-full z-10">
         <LightPillar
           topColor="#5227FF"
@@ -18,27 +18,27 @@ export default function AIActorsHero() {
           pillarRotation={45}
         />
       </div>
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-20">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center z-20">
         {/* Left Side - Text Content */}
         <motion.div
-          className="text-white z-10"
+          className="text-white z-10 px-2 sm:px-0"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {/* Brand Name */}
-          <p className="text-sm uppercase tracking-wider mb-6 text-white bg-white/10 inline px-4 py-2 rounded-full backdrop-blur-sm shadow-2xl">
+          <p className="text-xs sm:text-sm uppercase tracking-wider mb-4 sm:mb-6 text-white bg-white/10 inline px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm shadow-2xl">
             ZYKA AI STUDIO
           </p>
 
           {/* Headline */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-6 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-4 sm:mt-6 mb-3 sm:mb-4">
             The most lifelike and <span className="font-dancing">engaging AI Actors</span> available
           </h1>
 
           {/* Body Text */}
-          <p className="text-gray-300 mb-6 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">
             Over 1,000 AI talents for every vertical — with localized voices, expressions, gestures, and pacing finely tuned to your brand.
           </p>
 
@@ -47,7 +47,7 @@ export default function AIActorsHero() {
             icon={ArrowRight}
             iconPosition="right"
             align="center"
-            className="px-8 py-8 text-lg rounded-2xl hover:bg-white bg-white text-black"
+            className="px-4 sm:px-8 py-4 sm:py-8 text-sm sm:text-lg rounded-2xl hover:bg-white bg-white text-black"
             onClick={() => window.open("https://create.zyka.ai/", "_blank", "noopener,noreferrer")}
           >
             Browse AI Actors
@@ -63,7 +63,7 @@ export default function AIActorsHero() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="relative w-full max-w-md flex items-center justify-center min-h-[420px]">
+          <div className="relative w-full max-w-md flex items-center justify-center min-h-[200px] sm:min-h-[300px] md:min-h-[420px]">
             {/* Middle Phone (make as main central phone) */}
             <motion.div
               className="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -72,9 +72,9 @@ export default function AIActorsHero() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="relative w-[220px] h-[380px] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-2 border-gray-800">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-xl z-10"></div>
-                <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
+              <div className="relative w-[110px] h-[190px] sm:w-[165px] sm:h-[285px] md:w-[220px] md:h-[380px] bg-gray-900 rounded-[1.25rem] sm:rounded-4xl md:rounded-[2.5rem] p-1 sm:p-1.5 md:p-2 shadow-2xl border-2 border-gray-800">
+                <div className="absolute top-1 sm:top-1.5 md:top-2 left-1/2 -translate-x-1/2 w-12 sm:w-16 md:w-24 h-3 sm:h-4 md:h-6 bg-black rounded-b-lg sm:rounded-b-xl md:rounded-b-xl z-10"></div>
+                <div className="w-full h-full rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
                     src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/13.png"
                     alt="AI Actor"
@@ -84,21 +84,21 @@ export default function AIActorsHero() {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-22 h-1 bg-white/30 rounded-full"></div>
+                <div className="absolute bottom-1.5 sm:bottom-2 md:bottom-3 left-1/2 -translate-x-1/2 w-11 sm:w-16 md:w-22 h-0.5 sm:h-0.5 md:h-1 bg-white/30 rounded-full"></div>
               </div>
             </motion.div>
 
-            {/* Leftmost (rear), slightly left behind */}
+            {/* Leftmost (rear), slightly left behind - hidden on mobile */}
             <motion.div
-              className="absolute z-20 left-1/2 top-1/2 -translate-x-[85%] -translate-y-1/2"
+              className="absolute z-20 left-1/2 top-1/2 -translate-x-[85%] -translate-y-1/2 hidden sm:block"
               initial={{ opacity: 0, scale: 0.8, rotate: 3 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 3 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div className="relative w-[200px] h-[350px] bg-gray-900 rounded-[2.5rem] p-2 shadow-xl border-2 border-gray-800">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-10"></div>
-                <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
+              <div className="relative w-[100px] h-[175px] sm:w-[150px] sm:h-[262px] md:w-[200px] md:h-[350px] bg-gray-900 rounded-[1.25rem] sm:rounded-4xl md:rounded-[2.5rem] p-1 sm:p-1.5 md:p-2 shadow-xl border-2 border-gray-800">
+                <div className="absolute top-1 sm:top-1.5 md:top-2 left-1/2 -translate-x-1/2 w-10 sm:w-14 md:w-20 h-2.5 sm:h-3.5 md:h-5 bg-black rounded-b-lg sm:rounded-b-xl md:rounded-b-xl z-10"></div>
+                <div className="w-full h-full rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
                     src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/14.png"
                     alt="AI Actor"
@@ -108,21 +108,21 @@ export default function AIActorsHero() {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/30 rounded-full"></div>
+                <div className="absolute bottom-1.5 sm:bottom-2 md:bottom-3 left-1/2 -translate-x-1/2 w-10 sm:w-14 md:w-20 h-0.5 sm:h-0.5 md:h-1 bg-white/30 rounded-full"></div>
               </div>
             </motion.div>
 
-            {/* Rightmost (rear), slightly right behind */}
+            {/* Rightmost (rear), slightly right behind - hidden on mobile */}
             <motion.div
-              className="absolute z-10 left-1/2 top-1/2 -translate-x-[15%] -translate-y-1/2"
+              className="absolute z-10 left-1/2 top-1/2 -translate-x-[15%] -translate-y-1/2 hidden md:block"
               initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 5 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <div className="relative w-[180px] h-80 bg-gray-900 rounded-[2.5rem] p-2 shadow-lg border-2 border-gray-800">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-18 h-5 bg-black rounded-b-xl z-10"></div>
-                <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
+              <div className="relative w-[90px] h-[160px] md:w-[180px] md:h-80 bg-gray-900 rounded-[1.25rem] md:rounded-[2.5rem] p-1 md:p-2 shadow-lg border-2 border-gray-800">
+                <div className="absolute top-1 md:top-2 left-1/2 -translate-x-1/2 w-9 md:w-18 h-2.5 md:h-5 bg-black rounded-b-lg md:rounded-b-xl z-10"></div>
+                <div className="w-full h-full rounded-2xl md:rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
                     src="https://d22ofvg8yrf77k.cloudfront.net/Ai+Img/15.png"
                     alt="AI Actor"
@@ -132,7 +132,7 @@ export default function AIActorsHero() {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-18 h-1 bg-white/30 rounded-full"></div>
+                <div className="absolute bottom-1.5 md:bottom-3 left-1/2 -translate-x-1/2 w-9 md:w-18 h-0.5 md:h-1 bg-white/30 rounded-full"></div>
               </div>
             </motion.div>
           </div>

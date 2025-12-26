@@ -43,31 +43,31 @@ export default function UpdatesPage() {
       title="Updates & Changelog"
       description="Stay up to date with the latest features, improvements, and announcements."
     >
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-2 sm:px-0">
         {updates.map((update, index) => (
           <motion.div
             key={update.date}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all"
           >
-            <div className="flex items-start gap-4">
-              <div className="p-2 bg-blue-500/20 rounded-lg">
-                <Sparkles className="w-5 h-5 text-blue-400" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="p-1.5 sm:p-2 bg-blue-500/20 rounded-lg shrink-0">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                  <span className="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold">
                     {update.category}
                   </span>
-                  <div className="flex items-center gap-2 text-gray-400 text-sm">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(update.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-gray-400 text-xs sm:text-sm">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="whitespace-nowrap">{new Date(update.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{update.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{update.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{update.title}</h3>
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{update.description}</p>
               </div>
             </div>
           </motion.div>

@@ -61,17 +61,17 @@ export default function TermsPage() {
       title="Terms of Service"
       description="Please read these terms carefully before using ZYKA AI services."
     >
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 px-2 sm:px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="prose prose-invert max-w-none"
         >
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6">
             Last updated: January 2024
           </p>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
             These Terms of Service ("Terms") govern your access to and use of ZYKA AI's services. By using
             our services, you agree to be bound by these Terms.
           </p>
@@ -83,13 +83,13 @@ export default function TermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50"
           >
-            <h3 className="text-2xl font-semibold text-white mb-4">{section.title}</h3>
-            <ul className="space-y-3">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">{section.title}</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {section.content.map((item, itemIndex) => (
-                <li key={itemIndex} className="text-gray-300 leading-relaxed flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                <li key={itemIndex} className="text-sm sm:text-base text-gray-300 leading-relaxed flex items-start gap-2 sm:gap-3">
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                   <span>{item}</span>
                 </li>
               ))}

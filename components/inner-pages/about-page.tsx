@@ -33,46 +33,46 @@ export default function AboutPage() {
       title="About Us"
       description="Learn more about ZYKA AI and our mission to revolutionize video ad creation."
     >
-      <div className="max-w-4xl mx-auto space-y-12">
+      <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12 px-2 sm:px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="prose prose-invert max-w-none"
         >
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6">
             ZYKA AI was founded with a simple yet powerful vision: to make professional video ad creation
             accessible to everyone. We recognized that creating high-quality video ads was time-consuming,
             expensive, and required specialized skills that many businesses didn't have.
           </p>
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6">
             By leveraging cutting-edge AI technology, we've built a platform that enables businesses to
             create stunning video ads in minutes, not weeks. Our AI-powered tools handle everything from
             script generation to avatar selection, voice-over creation, and video production.
           </p>
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
             Today, thousands of businesses trust ZYKA AI to create their video ads, saving time and money
             while achieving professional results. We're proud to be at the forefront of the AI content
             creation revolution.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {values.map((value, index) => (
             <motion.div
               key={value.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-500/20 rounded-lg">
-                  <value.icon className="w-6 h-6 text-blue-400" />
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-2 sm:p-3 bg-blue-500/20 rounded-lg">
+                  <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{value.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-white">{value.title}</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{value.description}</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">{value.description}</p>
             </motion.div>
           ))}
         </div>

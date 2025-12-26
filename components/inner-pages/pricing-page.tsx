@@ -64,42 +64,42 @@ export default function PricingPage() {
       title="Pricing"
       description="Choose the perfect plan for your needs. All plans include a 14-day free trial."
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
         {plans.map((plan, index) => (
           <motion.div
             key={plan.name}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border ${
+            className={`relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 border ${
               plan.popular
-                ? "border-blue-500 shadow-lg shadow-blue-500/20 scale-105"
+                ? "border-blue-500 shadow-lg shadow-blue-500/20 sm:scale-105"
                 : "border-gray-700/50"
             }`}
           >
             {plan.popular && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-3 sm:px-4 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
                 Most Popular
               </div>
             )}
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+            <div className="text-center mb-4 sm:mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{plan.name}</h3>
               <div className="mb-2">
-                <span className="text-4xl font-bold text-white">{plan.price}</span>
-                <span className="text-gray-400 ml-2">{plan.period}</span>
+                <span className="text-3xl sm:text-4xl font-bold text-white">{plan.price}</span>
+                <span className="text-gray-400 ml-2 text-sm sm:text-base">{plan.period}</span>
               </div>
-              <p className="text-gray-400 text-sm">{plan.description}</p>
+              <p className="text-gray-400 text-xs sm:text-sm">{plan.description}</p>
             </div>
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {plan.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{feature}</span>
+                <li key={feature} className="flex items-start gap-2 sm:gap-3">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-gray-300">{feature}</span>
                 </li>
               ))}
             </ul>
             <AnimatedButton
-              className={`w-full rounded-lg py-3 font-semibold ${
+              className={`w-full rounded-lg py-2 sm:py-3 text-sm sm:text-base font-semibold ${
                 plan.popular
                   ? "bg-blue-500 text-white hover:bg-blue-600"
                   : "bg-gray-700 text-white hover:bg-gray-600"

@@ -39,7 +39,7 @@ export default function Home() {
 
         // Get current scroll position and section width
         const currentScroll = container.scrollLeft;
-        const sectionWidth = window.innerWidth;
+        const sectionWidth = container.clientWidth || window.innerWidth;
         const currentSection = Math.round(currentScroll / sectionWidth);
         
         // Calculate target section based on scroll direction
@@ -93,7 +93,7 @@ export default function Home() {
       setIsFeaturesLocked(false);
       
       const currentScroll = container.scrollLeft;
-      const sectionWidth = window.innerWidth;
+      const sectionWidth = container.clientWidth || window.innerWidth;
       const currentSection = Math.round(currentScroll / sectionWidth);
       
       if (e.detail.direction === 'up') {
@@ -182,9 +182,9 @@ export default function Home() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const checkScrollPosition = () => {
+      const checkScrollPosition = () => {
       const currentScroll = container.scrollLeft;
-      const sectionWidth = window.innerWidth;
+      const sectionWidth = container.clientWidth || window.innerWidth;
       const currentSection = Math.round(currentScroll / sectionWidth);
       
       // Section 2 is the mobile phones section (0 = hero, 1 = stats, 2 = mobile phones, 3 = features, 4 = contact)
@@ -286,18 +286,18 @@ export default function Home() {
       <MediaPreloader images={allImages} videos={allVideos} />
       <div 
         ref={scrollContainerRef}
-        className="w-full h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide"
+        className="w-full h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide touch-pan-x"
       >
         <div className="flex h-full">
         {/* Hero Section */}
-        <div className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center">
+        <div className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center">
           <HeroSection />
         </div>
         
         {/* Stats Section */}
         <div 
           ref={statsSectionRef}
-          className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center"
+          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
         >
           <StatsSection isInView={isStatsInView} />
         </div>
@@ -305,7 +305,7 @@ export default function Home() {
         {/* Mobile Phones Section */}
         <div 
           ref={mobilePhonesSectionRef}
-          className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center"
+          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
         >
           <MobilePhonesSection isInView={isMobilePhonesInView} />
         </div>
@@ -313,13 +313,13 @@ export default function Home() {
         {/* Features Section */}
         <div 
           ref={featuresSectionRef}
-          className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center"
+          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
         >
           <FeaturesSection isInView={isFeaturesInView} isLocked={isFeaturesLocked} />
         </div>
 
         {/* Contact Section */}
-        <div className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center">
+        <div className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center">
           <ContactSection />
         </div>
 

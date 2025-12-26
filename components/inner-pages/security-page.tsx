@@ -43,36 +43,36 @@ export default function SecurityPage() {
       title="Security"
       description="Learn about the security measures we implement to protect your data and content."
     >
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 px-2 sm:px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="prose prose-invert max-w-none"
         >
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
             At ZYKA AI, security is not an afterthought—it's built into every aspect of our platform.
             We understand that your content and data are valuable, and we're committed to protecting them
             with industry-leading security measures.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {securityFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-500/20 rounded-lg">
-                  <feature.icon className="w-6 h-6 text-blue-400" />
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-2 sm:p-3 bg-blue-500/20 rounded-lg">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-white">{feature.title}</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -81,14 +81,14 @@ export default function SecurityPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50"
         >
-          <h3 className="text-2xl font-semibold text-white mb-4">Reporting Security Issues</h3>
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Reporting Security Issues</h3>
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
             If you discover a security vulnerability, please report it to us at security@zykaai.com.
             We take security issues seriously and will respond promptly to all reports.
           </p>
-          <p className="text-gray-400 text-sm">
+          <p className="text-xs sm:text-sm text-gray-400">
             We appreciate responsible disclosure and will work with security researchers to address
             any issues found.
           </p>

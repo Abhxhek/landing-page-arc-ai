@@ -220,17 +220,17 @@ interface SectionHeaderProps {
 function SectionHeader({ title, description }: SectionHeaderProps) {
   return (
     <motion.div
-      className="text-center mb-16 z-10 relative"
+      className="text-center mb-8 sm:mb-12 md:mb-16 z-10 relative px-2"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-2xl md:text-3xl font-semibold text-white">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
         <span>{title.main}</span>{" "}
         <span className="font-dancing">{title.accent}</span>
       </h2>
-      <p className="text-lg tracking-wider text-gray-400 max-w-2xl mx-auto">
+      <p className="text-sm sm:text-base md:text-lg tracking-wider text-gray-400 max-w-2xl mx-auto mt-2">
         {description}
       </p>
     </motion.div>
@@ -331,7 +331,7 @@ function PostCard({ post, index }: PostCardProps) {
   return (
     <div
       key={`${post.id}-${index}`}
-      className="bg-gray-900 rounded-xl p-4 w-full transition-colors"
+      className="bg-gray-900 rounded-xl p-3 sm:p-4 w-full transition-colors"
     >
       <PostHeader post={post} />
       <PostContent
@@ -376,9 +376,9 @@ function PostColumn({ posts, columnIndex, duration, isInView }: PostColumnProps)
   const duplicatedPosts = [...posts, ...posts, ...posts];
 
   return (
-    <div className="flex flex-col items-center gap-4 h-full relative w-full max-w-sm">
+    <div className="flex flex-col items-center gap-2 sm:gap-4 h-full relative w-full max-w-sm">
       <motion.div
-        className="flex flex-col items-center gap-4"
+        className="flex flex-col items-center gap-2 sm:gap-4"
         initial={{ y: 0 }}
         animate={isInView ? { y: -totalHeight } : { y: 0 }}
         transition={{
@@ -402,12 +402,23 @@ interface PostsGridProps {
 }
 
 function PostsGrid({ columnPosts, isInView }: PostsGridProps) {
+  const [containerHeight, setContainerHeight] = useState(ANIMATION_CONFIG.CONTAINER_HEIGHT);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setContainerHeight(window.innerWidth < 768 ? ANIMATION_CONFIG.CONTAINER_HEIGHT * 0.7 : ANIMATION_CONFIG.CONTAINER_HEIGHT);
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
-    <div className="relative w-full max-w-6xl mx-auto">
+    <div className="relative w-full max-w-6xl mx-auto px-2">
       <GradientOverlay position="top" />
       <div
-        className="flex justify-center items-start gap-4 md:gap-6 lg:gap-8 overflow-hidden"
-        style={{ height: `${ANIMATION_CONFIG.CONTAINER_HEIGHT}px` }}
+        className="flex justify-center items-start gap-2 sm:gap-4 md:gap-6 lg:gap-8 overflow-hidden"
+        style={{ height: `${containerHeight}px` }}
       >
         {columnPosts.map((posts, columnIndex) => (
           <PostColumn

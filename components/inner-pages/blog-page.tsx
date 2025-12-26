@@ -53,37 +53,37 @@ export default function BlogPage() {
       title="Blog"
       description="Insights, tips, and stories about AI-powered content creation and digital marketing."
     >
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-2 sm:px-0">
         {blogPosts.map((post, index) => (
           <motion.article
             key={post.title}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all group cursor-pointer"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all group cursor-pointer"
           >
-            <div className="flex items-start justify-between gap-4 mb-4">
-              <div className="flex-1">
-                <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold mb-3">
+            <div className="flex items-start justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <div className="flex-1 min-w-0">
+                <span className="inline-block px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-semibold mb-2 sm:mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4">{post.excerpt}</p>
-                <div className="flex items-center gap-4 text-sm text-gray-500">
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">{post.excerpt}</p>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <User className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>{post.author}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="whitespace-nowrap">{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
                   </div>
                   <span>{post.readTime}</span>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
             </div>
           </motion.article>
         ))}
