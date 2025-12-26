@@ -35,11 +35,12 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Image
-                src="/Ai Img/9b663aef-1925-4388-8504-83bf43bbcb66.png"
+                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/11.png"
                 alt="AI Actor 1"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute bottom-4 left-4">
                 <p className="text-sm text-white">AI ACTOR 1</p>
@@ -54,11 +55,12 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Image
-                src="/Ai Img/af3734e5-2088-45c6-9ebf-5425cdf3d5ed.png"
+                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/12.png"
                 alt="AI Actor 2"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute bottom-4 left-4">
                 <p className="text-sm text-white">AI ACTOR 2</p>
@@ -95,11 +97,12 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <video
-                src="/Expression videos/Laughing.mp4"
+                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Laughing.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">
@@ -115,11 +118,12 @@ export default function StudioSections() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <video
-                src="/Expression videos/Crying.mp4"
+                src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Crying.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4">

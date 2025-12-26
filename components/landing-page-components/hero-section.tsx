@@ -8,12 +8,12 @@ import { Globe, Sparkle, ArrowRight } from "lucide-react";
 
 export default function Hero() {
     const mediaItems = [
-        { type: "video", src: "/General videos/AI Promo.mp4" },
-        { type: "video", src: "/General videos/Consultant.mp4" },
-        { type: "video", src: "/General videos/Tech.mp4" },
-        { type: "video", src: "/General videos/Crypto.mp4" },
-        { type: "video", src: "/General videos/Educational Explainer.mp4" },
-        { type: "video", src: "/General videos/Studio Podcast.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/1_general_video.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/2_general_video.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/3_general_video.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/4_general_video.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/5_general_video.mp4" },
+        { type: "video", src: "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/6_general_video.mp4" },
     ];
 
     const [step, setStep] = useState("shuffle-center"); // shuffle-center → text-in → scatter
@@ -114,10 +114,19 @@ export default function Hero() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                                 className="rounded-xl shadow-2xl w-[160px] h-[260px] object-cover"
                             />
                         ) : (
-                            <Image src={item.src} alt="actor" width={160} height={260} className="rounded-xl shadow-2xl" />
+                            <Image 
+                                src={item.src} 
+                                alt="actor" 
+                                width={160} 
+                                height={260} 
+                                className="rounded-xl shadow-2xl"
+                                priority={i < 2}
+                                loading={i < 2 ? "eager" : "lazy"}
+                            />
                         )}
                     </motion.div>
                 ))}

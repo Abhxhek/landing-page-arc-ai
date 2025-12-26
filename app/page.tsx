@@ -5,6 +5,7 @@ import StatsSection from "@/components/landing-page-components/stats-section";
 import MobilePhonesSection from "@/components/landing-page-components/mobile-phones-section";
 import FeaturesSection from "@/components/landing-page-components/features-section";
 import ContactSection from "@/components/landing-page-components/contact-section";
+import { MediaPreloader } from "@/components/shared/media-preloader";
 
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -244,12 +245,50 @@ export default function Home() {
     };
   }, []);
 
+  // Collect all media URLs for preloading
+  const allImages = [
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/1.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/2.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/3.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/4.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/5.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/6.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/7.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/8.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/9.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/10.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/11.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/12.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/13.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/14.png",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/15.png",
+  ];
+
+  const allVideos = [
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/1_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/2_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/3_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/4_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/5_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/6_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/7_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/8_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/9_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/10_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/11_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/12_general_video.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Laughing.mp4",
+    "https://zyka-ai.s3.ap-south-1.amazonaws.com/Expression+videos/Crying.mp4",
+  ];
+
   return (
-    <div 
-      ref={scrollContainerRef}
-      className="w-full h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide"
-    >
-      <div className="flex h-full">
+    <>
+      <MediaPreloader images={allImages} videos={allVideos} />
+      <div 
+        ref={scrollContainerRef}
+        className="w-full h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide"
+      >
+        <div className="flex h-full">
         {/* Hero Section */}
         <div className="h-full w-screen shrink-0 flex flex-col justify-center items-center snap-center">
           <HeroSection />
@@ -284,7 +323,8 @@ export default function Home() {
           <ContactSection />
         </div>
 
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -117,6 +117,7 @@ export function RandomImageCollage({ videos }: { videos: string[] }) {
                         loop
                         muted
                         playsInline
+                        // preload="auto"
                         className="w-full h-full object-cover"
                     />
                     </motion.div>
@@ -143,6 +144,8 @@ function MobilePhone({ imageSrc, index }: { imageSrc: string; index: number }) {
                         width={140}
                         height={280}
                         className="w-full h-full object-cover"
+                        priority={index < 3}
+                        loading={index < 3 ? "eager" : "lazy"}
                     />
                 </div>
 
@@ -156,26 +159,26 @@ function MobilePhone({ imageSrc, index }: { imageSrc: string; index: number }) {
 export default function MobilePhonesSection({ isInView }: MobilePhonesSectionProps) {
     // AI Images for mobile phone screens
     const images = [
-        "/Ai Img/02d6202a-e61b-49f4-9337-20bffbc82a29.png",
-        "/Ai Img/0f3d1fbb-a1fa-4a30-9bc1-a7cee23bc154.png",
-        "/Ai Img/158c94f4-1543-44b7-bcb5-d0ee7edc62f2.png",
-        "/Ai Img/3201c4c4-e63c-4b68-9530-5942cb1224174.png",
-        "/Ai Img/404c33fb-8761-4c1e-8e06-211cff213917.png",
-        "/Ai Img/5c7f5fa6-2486-48d6-a22e-0af06cfb4ab35.png",
-        "/Ai Img/75d09814-cef9-4538-8c5c-e05658854af3.png",
-        "/Ai Img/7cb45eda-2a66-4d13-87bb-6a34af54ce6f.png",
-        "/Ai Img/813ea4b5-2575-40bd-95d3-803b9d31f6bf.png",
-        "/Ai Img/8d03322b-a068-48b7-bb9e-896aeb2ff752.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/1.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/2.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/3.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/4.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/5.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/6.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/7.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/8.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/9.png",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/10.png",
     ];
 
     // Videos for collage
     const videos = [
-        "/General videos/Coffee Mug.mp4",
-        "/General videos/Fit Check.mp4",
-        "/General videos/Gaming Streamer Reaction.mp4",
-        "/General videos/Healthy Drink.mp4",
-        "/General videos/Influencer Style Recommendation.mp4",
-        "/General videos/Perfume.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/7_general_video.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/8_general_video.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/9_general_video.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/10_general_video.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/11_general_video.mp4",
+        "https://zyka-ai.s3.ap-south-1.amazonaws.com/General+videos/12_general_video.mp4",
     ];
 
     // Create 4 columns, each with 5 phones

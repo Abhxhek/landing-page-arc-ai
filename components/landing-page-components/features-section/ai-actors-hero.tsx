@@ -76,11 +76,12 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="/Ai Img/b63de7ec-ef6a-4854-b390-5c05edb59333.png"
+                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/13.png"
                     alt="AI Actor"
                     width={220}
                     height={380}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-22 h-1 bg-white/30 rounded-full"></div>
@@ -99,11 +100,12 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="/Ai Img/b827a450-79a0-418f-96fe-91b0dff3058a.png"
+                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/14.png"
                     alt="AI Actor"
                     width={200}
                     height={350}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/30 rounded-full"></div>
@@ -122,11 +124,12 @@ export default function AIActorsHero() {
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-18 h-5 bg-black rounded-b-xl z-10"></div>
                 <div className="w-full h-full rounded-4xl overflow-hidden bg-gray-900 relative">
                   <Image
-                    src="/Ai Img/c4302623-a345-4536-9f5e-3486da65973f.png"
+                    src="https://zyka-ai.s3.ap-south-1.amazonaws.com/Ai+Img/15.png"
                     alt="AI Actor"
                     width={180}
                     height={320}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-18 h-1 bg-white/30 rounded-full"></div>
