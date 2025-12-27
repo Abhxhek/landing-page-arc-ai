@@ -1,0 +1,48 @@
+🚀 Starting deployment for 'zyka_landing'...
+📁 Creating temporary build directory...
+🛠️  Building application...
+
+> arc-ai@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.7 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 13.6s
+   Running TypeScript ...
+   Collecting page data using 1 worker ...
+   Generating static pages using 1 worker (0/13) ...
+   Generating static pages using 1 worker (3/13) 
+   Generating static pages using 1 worker (6/13) 
+   Generating static pages using 1 worker (9/13) 
+ ✓ Generating static pages using 1 worker (13/13) in 884.3ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /blog
+├ ○ /careers
+├ ○ /documentation
+├ ○ /features
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /security
+├ ○ /terms
+└ ○ /updates
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)  prerendered as static content
+
+📦 Moving build to temp directory...
+🔄 Swapping build directories...
+🔄 Updating PM2 process...
+[PM2] Applying action reloadProcessId on app [zyka_landing](ids: [ 3 ])
+[PM2] [zyka_landing](3) ✓
+[PM2] Saving current process list...
+[PM2] Successfully saved in /home/ubuntu/.pm2/dump.pm2
+💾 PM2 process list saved.
+✅ Deployment completed successfully for zyka_landing!
