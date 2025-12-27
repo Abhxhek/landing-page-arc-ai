@@ -402,7 +402,7 @@ interface PostsGridProps {
 }
 
 function PostsGrid({ columnPosts, isInView }: PostsGridProps) {
-  const [containerHeight, setContainerHeight] = useState(ANIMATION_CONFIG.CONTAINER_HEIGHT);
+  const [containerHeight, setContainerHeight] = useState<number>(ANIMATION_CONFIG.CONTAINER_HEIGHT);
 
   useEffect(() => {
     const updateHeight = () => {
