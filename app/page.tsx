@@ -6,6 +6,7 @@ import MobilePhonesSection from "@/components/landing-page-components/mobile-pho
 import FeaturesSection from "@/components/landing-page-components/features-section";
 import ContactSection from "@/components/landing-page-components/contact-section";
 import { MediaPreloader } from "@/components/shared/media-preloader";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -18,9 +19,20 @@ export default function Home() {
   const [isFeaturesInView, setIsFeaturesInView] = useState(false);
   const [isFeaturesLocked, setIsFeaturesLocked] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [window.innerWidth]);
+
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (!container) return;
+    if (!container || isMobile) return; // Skip custom wheel handler on mobile
 
     const handleWheel = (e: WheelEvent) => {
       // Check if it's a vertical scroll (deltaY is significant)
@@ -32,7 +44,7 @@ export default function Home() {
 
         // Prevent default vertical scrolling for horizontal sections
         e.preventDefault();
-        
+
         // Only scroll if not already scrolling (debounce)
         if (isScrolling.current) return;
         isScrolling.current = true;
@@ -41,10 +53,10 @@ export default function Home() {
         const currentScroll = container.scrollLeft;
         const sectionWidth = container.clientWidth || window.innerWidth;
         const currentSection = Math.round(currentScroll / sectionWidth);
-        
+
         // Calculate target section based on scroll direction
         let targetSectionIndex = currentSection;
-        
+
         if (e.deltaY > 0) {
           // Scrolling down - move to next section
           targetSectionIndex = Math.min(currentSection + 1, 4); // Max 4 (contact section)
@@ -62,7 +74,7 @@ export default function Home() {
 
         // Calculate exact snap position
         const targetScroll = targetSectionIndex * sectionWidth;
-        
+
         // Scroll to target position - CSS snap will handle the snapping
         container.scrollTo({
           left: targetScroll,
@@ -82,7 +94,7 @@ export default function Home() {
     return () => {
       container.removeEventListener('wheel', handleWheel);
     };
-  }, [isFeaturesLocked]);
+  }, [isFeaturesLocked, isMobile]);
 
   // Listen for unlock events from features section
   useEffect(() => {
@@ -91,27 +103,43 @@ export default function Home() {
       if (!container) return;
 
       setIsFeaturesLocked(false);
-      
-      const currentScroll = container.scrollLeft;
-      const sectionWidth = container.clientWidth || window.innerWidth;
-      const currentSection = Math.round(currentScroll / sectionWidth);
-      
+
+      const currentScroll = isMobile ? container.scrollTop : container.scrollLeft;
+      const sectionSize = isMobile 
+        ? (container.clientHeight || window.innerHeight)
+        : (container.clientWidth || window.innerWidth);
+      const currentSection = Math.round(currentScroll / sectionSize);
+
       if (e.detail.direction === 'up') {
         // Go to previous section
         const targetSectionIndex = Math.max(currentSection - 1, 0);
-        const targetScroll = targetSectionIndex * sectionWidth;
-        container.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth'
-        });
+        const targetScroll = targetSectionIndex * sectionSize;
+        if (isMobile) {
+          container.scrollTo({
+            top: targetScroll,
+            behavior: 'smooth'
+          });
+        } else {
+          container.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+          });
+        }
       } else if (e.detail.direction === 'down') {
         // Go to next section (contact section)
         const targetSectionIndex = Math.min(currentSection + 1, 4);
-        const targetScroll = targetSectionIndex * sectionWidth;
-        container.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth'
-        });
+        const targetScroll = targetSectionIndex * sectionSize;
+        if (isMobile) {
+          container.scrollTo({
+            top: targetScroll,
+            behavior: 'smooth'
+          });
+        } else {
+          container.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+          });
+        }
       }
     };
 
@@ -120,7 +148,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('unlock-features-section', handleUnlock as EventListener);
     };
-  }, []);
+  }, [isMobile]);
 
   // Intersection Observer for stats section
   useEffect(() => {
@@ -182,11 +210,13 @@ export default function Home() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-      const checkScrollPosition = () => {
-      const currentScroll = container.scrollLeft;
-      const sectionWidth = container.clientWidth || window.innerWidth;
-      const currentSection = Math.round(currentScroll / sectionWidth);
-      
+    const checkScrollPosition = () => {
+      const currentScroll = isMobile ? container.scrollTop : container.scrollLeft;
+      const sectionSize = isMobile 
+        ? (container.clientHeight || window.innerHeight)
+        : (container.clientWidth || window.innerWidth);
+      const currentSection = Math.round(currentScroll / sectionSize);
+
       // Section 2 is the mobile phones section (0 = hero, 1 = stats, 2 = mobile phones, 3 = features, 4 = contact)
       if (currentSection === 2) {
         setIsMobilePhonesInView(true);
@@ -213,7 +243,7 @@ export default function Home() {
     return () => {
       container.removeEventListener('scroll', checkScrollPosition);
     };
-  }, []);
+  }, [isMobile]);
 
   // Intersection Observer for features section
   useEffect(() => {
@@ -284,44 +314,49 @@ export default function Home() {
   return (
     <>
       <MediaPreloader images={allImages} videos={allVideos} />
-      <div 
+      <div
         ref={scrollContainerRef}
-        className="w-full h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide touch-pan-x"
+        className={cn(
+          "w-full h-screen scrollbar-hide",
+          isMobile 
+            ? "overflow-y-scroll overflow-x-hidden snap-y snap-mandatory" 
+            : "overflow-x-scroll overflow-y-hidden snap-x snap-mandatory touch-pan-x"
+        )}
       >
-        <div className="flex h-full">
-        {/* Hero Section */}
-        <div className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center">
-          <HeroSection />
-        </div>
-        
-        {/* Stats Section */}
-        <div 
-          ref={statsSectionRef}
-          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
-        >
-          <StatsSection isInView={isStatsInView} />
-        </div>
+        <div className={cn("flex h-full", isMobile ? "flex-col" : "")}>
+          {/* Hero Section */}
+          <div className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}>
+            <HeroSection />
+          </div>
 
-        {/* Mobile Phones Section */}
-        <div 
-          ref={mobilePhonesSectionRef}
-          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
-        >
-          <MobilePhonesSection isInView={isMobilePhonesInView} />
-        </div>
+          {/* Stats Section */}
+          <div
+            ref={statsSectionRef}
+            className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}
+          >
+            <StatsSection isInView={isStatsInView} />
+          </div>
 
-        {/* Features Section */}
-        <div 
-          ref={featuresSectionRef}
-          className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center"
-        >
-          <FeaturesSection isInView={isFeaturesInView} isLocked={isFeaturesLocked} />
-        </div>
+          {/* Mobile Phones Section */}
+          <div
+            ref={mobilePhonesSectionRef}
+            className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}
+          >
+            <MobilePhonesSection isInView={isMobilePhonesInView} />
+          </div>
 
-        {/* Contact Section */}
-        <div className="h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center">
-          <ContactSection />
-        </div>
+          {/* Features Section */}
+          <div
+            ref={featuresSectionRef}
+            className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}
+          >
+            <FeaturesSection isInView={isFeaturesInView} isLocked={isFeaturesLocked} />
+          </div>
+
+          {/* Contact Section */}
+          <div className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}>
+            <ContactSection />
+          </div>
 
         </div>
       </div>
