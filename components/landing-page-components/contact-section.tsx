@@ -83,7 +83,7 @@ export default function ContactSection() {
         >
           <AnimatedButton
             align="center"
-            className="rounded-2xl text-xs sm:text-sm md:text-[16px] mt-2 sm:mt-4 h-9 sm:h-10 md:h-12 px-3 sm:px-4 text-xs sm:text-sm md:text-base lg:text-lg drop-shadow-2xl shadow bg-white text-black hover:bg-gray-100 group"
+            className="rounded-2xl md:text-[16px] mt-2 sm:mt-4 h-9 sm:h-10 md:h-12 px-3 sm:px-4 text-xs sm:text-sm md:text-base lg:text-lg drop-shadow-2xl shadow bg-white text-black hover:bg-gray-100 group"
             onClick={openModal}
           >
             <span className="block group-hover:hidden">Contact Us</span>
@@ -141,9 +141,9 @@ export default function ContactSection() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                   >
                     <Phone size={12} className="sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 shrink-0" />
-                    <span className="text-[10px] sm:text-xs md:text-sm">+1 (555) 123-4567</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm">support@zyka.ai</span>
                   </motion.div>
-                  <motion.div
+                  {/* <motion.div
                     className="flex items-center gap-1.5 sm:gap-2 md:gap-3 text-gray-400 text-[10px] sm:text-xs md:text-sm"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -152,7 +152,7 @@ export default function ContactSection() {
                   >
                     <MapPin size={12} className="sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 shrink-0" />
                     <span className="text-[10px] sm:text-xs md:text-sm">San Francisco, CA</span>
-                  </motion.div>
+                  </motion.div> */}
                 </div>
               </div>
 
