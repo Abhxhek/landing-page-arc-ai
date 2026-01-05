@@ -328,7 +328,7 @@ export default function Home() {
       >
         <div className={cn("flex h-full", isMobile ? "flex-col" : "")}>
           {/* Hero Section */}
-          <div className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}>
+          <div id="hero-section" className={cn("h-full w-screen min-w-screen shrink-0 flex flex-col justify-center items-center snap-center", isMobile ? "h-screen" : "")}>
             <HeroSection />
           </div>
 
