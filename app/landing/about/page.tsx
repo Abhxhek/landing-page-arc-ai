@@ -3,7 +3,6 @@
 import { PageLayout } from "@/components/shared/page-layout";
 import Image from "next/image";
 import { Target, Users, Zap, Heart } from "lucide-react";
-import Link from "next/link";
 
 export default function AboutPage() {
   const values = [
@@ -167,11 +166,11 @@ export default function AboutPage() {
               Be part of the future of AI-powered marketing
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/auth/login">
+              <a href="https://zyka.ai/auth/login">
                 <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                   Start Free Trial
                 </button>
-              </Link>
+              </a>
               <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-colors">
                 View Careers
               </button>

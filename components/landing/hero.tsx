@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { VideoModal } from "@/components/ui/video-modal";
 
@@ -119,14 +118,14 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-0 w-full px-4 sm:px-0">
               {/* CTA Button */}
-              <Link href="/auth/login" className="w-full sm:w-auto">
+              <a href="https://zyka.ai/auth/login" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black w-full sm:w-auto px-6 sm:px-9 py-5 sm:py-7 text-sm sm:text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
                 >
                   Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300 ml-1" />
                 </Button>
-              </Link>
+              </a>
               <button className="cursor-pointer text-sm sm:text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40 text-center">
                 Watch 1-min video
               </button>

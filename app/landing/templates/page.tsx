@@ -3,7 +3,6 @@
 import { PageLayout } from "@/components/shared/page-layout";
 import Image from "next/image";
 import { Play } from "lucide-react";
-import Link from "next/link";
 
 export default function TemplatesPage() {
   const templateCategories = [
@@ -203,11 +202,11 @@ export default function TemplatesPage() {
             <p className="text-xl text-gray-300 mb-8">
               Browse our template library and create your first ad in minutes
             </p>
-            <Link href="/auth/login">
+            <a href="https://zyka.ai/auth/login">
               <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Explore Templates
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

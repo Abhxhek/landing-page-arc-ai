@@ -1,7 +1,6 @@
 "use client"
 
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
@@ -59,12 +58,12 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-3">
-            <Link href="/auth/login" onClick={(e) => e.stopPropagation()}>
+            <a href="https://zyka.ai/auth/login" onClick={(e) => e.stopPropagation()}>
               <button className="cursor-pointer rounded-full bg-black px-3 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04] whitespace-nowrap">
                 <span className="hidden sm:inline">Login or Sign up</span>
                 <span className="sm:hidden">Login</span>
               </button>
-            </Link>
+            </a>
 
             {/* Book Demo Button - Opens modal with calendar iframe */}
             <button
