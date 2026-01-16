@@ -52,25 +52,27 @@ export function Header() {
         </div>
       )}
 
-      <header className="fixed top-4 left-0 w-full z-50 flex justify-center px-4 pointer-events-none" onClick={() => push("/")}>
-        <div className="flex w-full max-w-5xl items-center justify-between rounded-2xl bg-white/40 px-6 py-3 backdrop-blur-xl pointer-events-auto">
-          <div className="cursor-pointer text-xs uppercase tracking-[0.35em] font-semibold text-center " >
+      <header className="fixed top-2 sm:top-4 left-0 w-full z-50 flex justify-center px-2 sm:px-4 pointer-events-none" onClick={() => push("/")}>
+        <div className="flex w-full max-w-5xl items-center justify-between rounded-xl sm:rounded-2xl bg-white/40 px-3 sm:px-6 py-2 sm:py-3 backdrop-blur-xl pointer-events-auto">
+          <div className="cursor-pointer text-[10px] sm:text-xs uppercase tracking-[0.35em] font-semibold text-center whitespace-nowrap" >
             zyka.ai
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link href="/login" onClick={(e) => e.stopPropagation()}>
-              <button className="cursor-pointer rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04]">
-                Login or Sign up
+          <div className="flex items-center gap-1.5 sm:gap-3">
+            <Link href="/auth/login" onClick={(e) => e.stopPropagation()}>
+              <button className="cursor-pointer rounded-full bg-black px-3 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04] whitespace-nowrap">
+                <span className="hidden sm:inline">Login or Sign up</span>
+                <span className="sm:hidden">Login</span>
               </button>
             </Link>
 
             {/* Book Demo Button - Opens modal with calendar iframe */}
             <button
               onClick={handleBookDemoClick}
-              className="cursor-pointer rounded-full bg-[#039BE5] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#0288D1] hover:scale-[1.04]"
+              className="cursor-pointer rounded-full bg-[#039BE5] px-3 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-white shadow-md transition hover:bg-[#0288D1] hover:scale-[1.04] whitespace-nowrap"
             >
-              Book Demo
+              <span className="hidden sm:inline">Book Demo</span>
+              <span className="sm:hidden">Demo</span>
             </button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative h-screen overflow-hidden bg-gradient-to-b from-[#fefcfb] via-[#fdf8f4] to-[#fcf5f0] pt-20">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#fefcfb] via-[#fdf8f4] to-[#fcf5f0] pt-16 sm:pt-20 pb-8 sm:pb-12">
       {/* CSS Animations for infinite scrolling */}
       <style jsx>{`
         @keyframes scrollDown {
@@ -58,12 +58,12 @@ export function Hero() {
       <div className="absolute top-32 -left-20 h-96 w-96 bg-[#ffe8d1] opacity-35 blur-[160px]" />
       <div className="absolute bottom-20 right-16 h-80 w-80 bg-[#f0d4ff] opacity-30 blur-[130px] animate-pulse" style={{ animationDuration: '5s' }} />
 
-      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10 h-full flex items-center">
-        {/* Three Column Layout: Images - Text - Images */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full">
+      <div className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center">
+        {/* Mobile & Desktop Layout */}
+        <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-12 py-8 lg:py-0">
 
-          {/* Left Column - Phone Mockups Scrolling Down */}
-          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left bg-transparent" style={{ height: '80vh', background: 'transparent' }}>
+          {/* Left Column - Phone Mockups Scrolling Down (Desktop only) */}
+          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-left bg-transparent shrink-0" style={{ height: '80vh', background: 'transparent' }}>
             <div className="flex flex-col gap-4 bg-transparent " style={{ animation: 'scrollDown 30s linear infinite' }}>
               {/* Triple videos for seamless infinite loop */}
               {[...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4), ...heroVideos.slice(0, 4)].map((videoUrl, index) => (
@@ -99,41 +99,41 @@ export function Hero() {
           </div>
 
           {/* Center Column - Text Content */}
-          <div className="flex-1 max-w-2xl text-center">
+          <div className="w-full lg:flex-1 max-w-2xl flex flex-col items-center justify-center text-center px-4 sm:px-0">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/90 border border-black/8 rounded-full px-5 py-2.5 text-xs md:text-sm font-semibold text-gray-700 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] backdrop-blur-sm hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#6b4dff] animate-pulse" />
-              Trusted by 500K+ growth teams worldwide
+            <div className="inline-flex items-center justify-center gap-2 bg-white/90 border border-black/8 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-[10px] sm:text-xs md:text-sm font-semibold text-gray-700 mb-6 sm:mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] backdrop-blur-sm hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
+              <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#6b4dff] animate-pulse" />
+              <span className="whitespace-nowrap">Trusted by 500K+ growth teams worldwide</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 tracking-[-0.03em] text-black leading-[1.1] animate-fade-in-up">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 tracking-[-0.03em] text-black leading-[1.1] text-center w-full">
               AI that creates ads{" "}
               <span className="italic font-serif font-normal">that works</span>
             </h1>
 
             {/* Sub-headline */}
-            <p className=" text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 sm:mb-10 max-w-xl leading-relaxed text-center w-full">
               Choose from 1,000+ captivating AI actors—or turn your photo into a custom AI avatar.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-0 w-full px-4 sm:px-0">
               {/* CTA Button */}
-              <Link href="/login">
+              <Link href="/auth/login" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
+                  className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black w-full sm:w-auto px-6 sm:px-9 py-5 sm:py-7 text-sm sm:text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"
                 >
-                  Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300" />
+                  Create Your AI Ad <ArrowRight className="group-hover:translate-x-2 duration-300 ml-1" />
                 </Button>
               </Link>
-              <button className="cursor-pointer text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40">
+              <button className="cursor-pointer text-sm sm:text-base font-semibold text-black/70 hover:text-black transition-colors underline decoration-black/20 hover:decoration-black/40 text-center">
                 Watch 1-min video
               </button>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10 text-xs sm:text-sm text-gray-500 w-full">
+              <div className="flex items-center justify-center gap-2">
                 <div className="flex -space-x-2">
                   {['H', 'M', 'P'].map((i, index) => {
                     // Deterministic colors based on index to avoid hydration mismatch
@@ -141,7 +141,7 @@ export function Hero() {
                     return (
                       <div
                         key={i}
-                        className={`h-8 w-8 rounded-full border border-white text-white flex items-center justify-center`}
+                        className={`h-7 w-7 sm:h-8 sm:w-8 rounded-full border border-white text-white flex items-center justify-center text-xs sm:text-sm`}
                         style={{ backgroundColor: colors[index] }}
                       >
                         {i}
@@ -149,15 +149,14 @@ export function Hero() {
                     );
                   })}
                 </div>
-                <span>4.9/5 rating from 10M+ ads</span>
+                <span className="whitespace-nowrap">4.9/5 rating from 10M+ ads</span>
               </div>
-              <div className="h-2 w-2 rounded-full bg-[#6b4dff] hidden md:block" />
-              <div>Works with TikTok · Meta · YouTube · Shopify</div>
+              <div className="text-center">Works with TikTok · Meta · YouTube · Shopify</div>
             </div>
           </div>
 
-          {/* Right Column - Phone Mockups Scrolling Up */}
-          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-right" style={{ height: '80vh', background: 'transparent' }}>
+          {/* Right Column - Phone Mockups Scrolling Up (Desktop only) */}
+          <div className="hidden lg:block w-48 relative overflow-hidden scroll-container-right shrink-0" style={{ height: '80vh', background: 'transparent' }}>
             <div className="flex flex-col gap-4" style={{ animation: 'scrollUp 30s linear infinite', background: 'transparent' }}>
               {/* Triple videos for seamless infinite loop */}
               {[...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8), ...heroVideos.slice(4, 8)].map((videoUrl, index) => (
@@ -192,43 +191,6 @@ export function Hero() {
             </div>
           </div>
 
-        </div>
-
-        {/* Mobile View - Show videos at bottom for smaller screens */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto px-4 mt-12 lg:hidden">
-          {heroVideos.map((videoUrl, index) => (
-            <div
-              key={index}
-              className="relative cursor-pointer"
-              style={{
-                animation: `float ${3 + (index % 3)}s ease-in-out infinite`,
-                animationDelay: `${index * 0.15}s`,
-              }}
-              onClick={() => {
-                setSelectedVideo(videoUrl);
-                setIsModalOpen(true);
-              }}
-            >
-              <div className="bg-black rounded-[2.5rem] shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden aspect-9/16 relative">
-                {/* Phone frame with notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-3xl z-10" />
-
-                {/* Phone mockup content */}
-                <div className="absolute inset-0 p-2">
-                  <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
-                    <video
-                      src={videoUrl}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 

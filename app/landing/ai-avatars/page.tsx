@@ -142,7 +142,7 @@ export default function AIAvatarsPage() {
             <p className="text-xl text-gray-300 mb-8">
               Start creating authentic ads with our AI avatar library
             </p>
-            <Link href="/login">
+            <Link href="/auth/login">
               <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Browse All Avatars
               </button>
