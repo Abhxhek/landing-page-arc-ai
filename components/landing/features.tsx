@@ -9,18 +9,18 @@ export function Features() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // All 8 videos available
   const allVideos = [
-    "/video_1.mp4",
-    "/video_2.mp4",
-    "/video_3.mp4",
-    "/video_4.mp4",
-    "/video_5.mp4",
-    "/video_6.mp4",
-    "/video_7.mp4",
-    "/video_8.mp4",
+    "/landing/video_1.mp4",
+    "/landing/video_2.mp4",
+    "/landing/video_3.mp4",
+    "/landing/video_4.mp4",
+    "/landing/video_5.mp4",
+    "/landing/video_6.mp4",
+    "/landing/video_7.mp4",
+    "/landing/video_8.mp4",
   ];
 
   // Default videos for SSR (same on server and client initially)
-  const defaultVideos = ["/video_1.mp4", "/video_2.mp4", "/video_3.mp4"];
+  const defaultVideos = ["/landing/video_1.mp4", "/landing/video_2.mp4", "/landing/video_3.mp4"];
   
   // Randomly select 3 videos only on client side after mount
   const [selectedVideos, setSelectedVideos] = useState<string[]>(defaultVideos);

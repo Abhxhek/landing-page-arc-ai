@@ -11,14 +11,14 @@ export function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Videos for hero phone mockups
   const heroVideos = [
-    "/video_1.mp4",
-    "/video_2.mp4",  
-    "/video_3.mp4",
-    "/video_4.mp4",
-    "/video_5.mp4", 
-    "/video_6.mp4",
-    "/video_7.mp4",
-    "/video_8.mp4",
+    "/landing/video_1.mp4",
+    "/landing/video_2.mp4",  
+    "/landing/video_3.mp4",
+    "/landing/video_4.mp4",
+    "/landing/video_5.mp4", 
+    "/landing/video_6.mp4",
+    "/landing/video_7.mp4",
+    "/landing/video_8.mp4",
   ];
 
   return (
@@ -119,7 +119,7 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* CTA Button */}
-              <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+              <Link href="/login">
                 <Button
                   size="lg"
                   className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black px-9 py-7 text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"

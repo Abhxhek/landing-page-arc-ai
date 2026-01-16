@@ -167,7 +167,7 @@ export default function AboutPage() {
               Be part of the future of AI-powered marketing
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer">
+              <Link href="/login">
                 <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                   Start Free Trial
                 </button>

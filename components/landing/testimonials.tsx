@@ -11,19 +11,19 @@ export function Testimonials() {
     {
       id: 2,
       company: "Docscrib",
-      image: "/logo.png",
+      image: "/landing/logo.png",
       quote: "It feels like hiring an entire creative studio that never sleeps.",
     },
     {
       id: 3,
       company: "Konnector",
       image: "https://konnector.ai/wp-content/uploads/2023/11/logo-1.png",
-      quote: "The most realistic AI actors we’ve seen. Clients can’t tell the difference.",
+      quote: "The most realistic AI actors we've seen. Clients can't tell the difference.",
     },
     {
       id: 4,
       company: "Trendoop",
-      image: "/logo-4.png",
+      image: "/landing/logo-4.png",
       quote: "We test 20 creative angles a day. Zyka makes it financially possible.",
     },
   ];

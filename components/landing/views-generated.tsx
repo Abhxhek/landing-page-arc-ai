@@ -13,42 +13,42 @@ export function ViewsGenerated() {
     { 
       id: 1, 
       views: "125K", 
-      video: "/video_1.mp4"
+      video: "/landing/video_1.mp4"
     },
     { 
       id: 2, 
       views: "89K", 
-      video: "/video_2.mp4"
+      video: "/landing/video_2.mp4"
     },
     { 
       id: 3, 
       views: "256K", 
-      video: "/video_3.mp4"
+      video: "/landing/video_3.mp4"
     },
     { 
       id: 4, 
       views: "178K", 
-      video: "/video_4.mp4"
+      video: "/landing/video_4.mp4"
     },
     { 
       id: 5, 
       views: "312K", 
-      video: "/video_5.mp4"
+      video: "/landing/video_5.mp4"
     },
     { 
       id: 6, 
       views: "94K", 
-      video: "/video_6.mp4"
+      video: "/landing/video_6.mp4"
     },
     { 
       id: 7, 
       views: "201K", 
-      video: "/video_7.mp4"
+      video: "/landing/video_7.mp4"
     },
     { 
       id: 8, 
       views: "167K", 
-      video: "/video_8.mp4"
+      video: "/landing/video_8.mp4"
     },
   ];
 

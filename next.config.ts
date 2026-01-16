@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  assetPrefix: '/codes',
+  assetPrefix: '/landing',
   images: {
     remotePatterns: [
       {

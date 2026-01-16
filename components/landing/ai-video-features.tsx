@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export function AIVideoFeatures() {
   const leftImages = [
-    "/image_1.png",
-    "/image_2.png",
+    "/landing/image_1.png",
+    "/landing/image_2.png",
   ];
   const rightImages = [
-    "/image_3.png",
-    "/image_4.png",
+    "/landing/image_3.png",
+    "/landing/image_4.png",
   ];
 
   return (

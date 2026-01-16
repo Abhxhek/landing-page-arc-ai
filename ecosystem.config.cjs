@@ -15,7 +15,7 @@ module.exports = {
       error_file: "./logs/err.log",
       out_file: "./logs/out.log",
       env: {
-        PORT: 4001,
+        PORT: 4008,
         NODE_ENV: "production",
       },
     },

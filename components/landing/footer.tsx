@@ -6,13 +6,13 @@ export function Footer() {
 
   const footerLinks = {
     Product: [
-      { name: "Features", href: "/features" },
+      { name: "Features", href: "/landing/features" },
       { name: "Pricing", href: "/pricing" },
-      { name: "AI Avatars", href: "/ai-avatars" },
-      { name: "Templates", href: "/templates" },
+      { name: "AI Avatars", href: "/landing/ai-avatars" },
+      { name: "Templates", href: "/landing/templates" },
     ],
     Company: [
-      { name: "About Us", href: "/about" },
+      { name: "About Us", href: "/landing/about" },
       { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
     ],

@@ -59,7 +59,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link href="https://create.zyka.ai/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+            <Link href="/login" onClick={(e) => e.stopPropagation()}>
               <button className="cursor-pointer rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-white hover:border-black border-black border hover:text-black hover:scale-[1.04]">
                 Login or Sign up
               </button>

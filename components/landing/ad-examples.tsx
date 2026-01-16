@@ -20,7 +20,7 @@ export function AdExamples() {
       views: "12.6K",
       revenue: "$16K",
       delta: "+195%",
-      video: "/video_1.mp4"
+      video: "/landing/video_1.mp4"
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ export function AdExamples() {
       views: "12.6K",
       revenue: "$16K",
       delta: "+195%",
-      video: "/video_2.mp4"
+      video: "/landing/video_2.mp4"
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ export function AdExamples() {
       views: "18.5K",
       revenue: "$27K",
       delta: "+95%",
-      video: "/video_3.mp4"
+      video: "/landing/video_3.mp4"
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ export function AdExamples() {
       views: "25.2K",
       revenue: "$32K",
       delta: "+270%",
-      video: "/video_4.mp4"
+      video: "/landing/video_4.mp4"
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ export function AdExamples() {
       views: "15.1K",
       revenue: "$18K",
       delta: "+14%",
-      video: "/video_5.mp4"
+      video: "/landing/video_5.mp4"
     },
     {
       id: 6,
@@ -75,7 +75,7 @@ export function AdExamples() {
       views: "11.8K",
       revenue: "$19K",
       delta: "+17%",
-      video: "/video_6.mp4"
+      video: "/landing/video_6.mp4"
     },
     {
       id: 7,
@@ -86,7 +86,7 @@ export function AdExamples() {
       views: "11.2K",
       revenue: "$10.1K",
       delta: "+26%",
-      video: "/video_7.mp4"
+      video: "/landing/video_7.mp4"
     },
     {
       id: 8,
@@ -97,7 +97,7 @@ export function AdExamples() {
       views: "9K",
       revenue: "$14K",
       delta: "+120%",
-      video: "/video_8.mp4"
+      video: "/landing/video_8.mp4"
     },
   ];
 
