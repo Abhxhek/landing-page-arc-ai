@@ -118,7 +118,7 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-0 w-full px-4 sm:px-0">
               {/* CTA Button */}
-              <a href="https://zyka.ai/auth/login" className="w-full sm:w-auto">
+              <a href="https://zyka.ai/login" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="group cursor-pointer bg-black text-white hover:bg-[#fefcfb] hover:text-black hover:border hover:border-black w-full sm:w-auto px-6 sm:px-9 py-5 sm:py-7 text-sm sm:text-base font-semibold rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-105"

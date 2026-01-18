@@ -37,7 +37,7 @@ export class ApiServices {
                 if (error.response?.status === 401) {
                     this.clearToken();
                     if (typeof window !== "undefined") {
-                        window.location.href = "https://zyka.ai/auth/login";
+                        window.location.href = "https://zyka.ai/login";
                     }
                 }
 
@@ -82,7 +82,7 @@ export class ApiServices {
 
     logout = () => {
         this.clearToken();
-        window.location.href = 'https://zyka.ai/auth/login';
+        window.location.href = 'https://zyka.ai/login';
     }
 
     reqApiCall = async ({ method, endpoint, data, retryCount = 0, signal }: ReqApiCallTypes): Promise<any> => {
