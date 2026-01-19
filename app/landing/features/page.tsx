@@ -91,7 +91,7 @@ export default function FeaturesPage() {
             <p className="text-xl text-gray-300 mb-8">
               Join thousands of marketers creating winning ads with AI
             </p>
-            <a href="https://zyka.ai/login">
+            <a href="https://zyka.ai/create/image">
               <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Start Free Trial
               </button>
